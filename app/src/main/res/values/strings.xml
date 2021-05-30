@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">NFU捷径</string>
+    <string name="feeding_developer">投喂开发者</string>
+    <string name="no_scan_pass">不扫码通行</string>
+    <string name="campus_bus">校园巴士</string>
+    <string name="electronic_library_card">电子借阅卡</string>
+    <string name="access_code">门禁码</string>
+    <string name="wifi">校园网认证登录</string>
+    <string name="developer_github">在Github上关注我</string>
+
+    <string name="login_successfully">登陆成功！</string>
+    <string name="login_unsuccessfully">登录失败</string>
+
+    <string name="foreground_service_notification_channel">前台服务通知</string>
+
+    <string name="setting_dialog_title">请输入您的学号与密码</string>
+    <string name="student_id">学号</string>
+    <string name="password">密码</string>
+    <string name="password_help_text">信息门户密码（非WIFI密码）</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="save_successfully">保存成功</string>
+
+    <string name="id_or_pw_error_toast">账号或密码为空，请点击齿轮图标\u2699配置信息后再重试</string>
+    <string name="on_unavailable_toast">您的设备似乎未成功连接到WIFI，无法登录</string>
+
+    <string name="tile_wifi">校园网登录</string>
+</resources>

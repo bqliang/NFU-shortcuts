@@ -1,0 +1,2 @@
+rootProject.name = "NFU shortcuts"
+include ':app'

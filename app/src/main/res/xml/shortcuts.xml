@@ -1,0 +1,42 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="wifi"
+        android:icon="@mipmap/login_circle"
+        android:shortcutShortLabel="@string/wifi">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.bqliang.nfuquickjump"
+            android:targetClass="com.bqliang.nfuquickjump.MyActivity"/>
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="no_scan_pass"
+        android:icon="@mipmap/no_scan_pass_circle"
+        android:shortcutShortLabel="@string/no_scan_pass">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data= "alipays://platformapi/startapp?appId=20000067&amp;url=http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"/>
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="access_code"
+        android:icon="@mipmap/access_code_circle"
+        android:shortcutShortLabel="@string/access_code">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data= "alipays://platformapi/startapp?appId=20000067&amp;url=https://qr.alipay.com/s7x133604ff1cacyyk4fyd3"/>
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="campus_bus"
+        android:icon="@mipmap/campus_bus_circle"
+        android:shortcutShortLabel="@string/campus_bus">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data= "alipays://platformapi/startapp?appId=20000067&amp;url=http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"/>
+    </shortcut>
+</shortcuts>

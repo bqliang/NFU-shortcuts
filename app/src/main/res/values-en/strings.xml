@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NFU Shortcuts</string>
+    <string name="feeding_developer">Feeding Developer</string>
+    <string name="no_scan_pass">No Scan Pass</string>
+    <string name="campus_bus">Campus Bus</string>
+    <string name="electronic_library_card">Library Card</string>
+    <string name="access_code">Access Code</string>
+    <string name="wifi">Login NFU WIFI</string>
+    <string name="developer_github">Follow Developer in Github</string>
+
+    <string name="login_successfully">Login successfully!</string>
+    <string name="login_unsuccessfully">Fail to login</string>
+
+    <string name="foreground_service_notification_channel">Foreground Service</string>
+
+    <string name="setting_dialog_title">Please Enter Details</string>
+    <string name="student_id">Student ID</string>
+    <string name="password">Password</string>
+    <string name="password_help_text">DCIP password (not wifi password)</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="save_successfully">save successfully!</string>
+
+    <string name="id_or_pw_error_toast">ID or password is empty, please click gear icon\u2699 to configure information and then try again.</string>
+    <string name="on_unavailable_toast">Your phone is not connected to WIFI, so cannot login.</string>
+
+    <string name="tile_wifi">NFU WIFI</string>
+</resources>
