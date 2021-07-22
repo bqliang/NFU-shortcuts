@@ -20,7 +20,7 @@
         android:theme="@style/Theme.NoDisplay"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".activity.MainActivity"
             android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,17 +33,17 @@
         </activity>
 
         <activity
-            android:name=".MyActivity"
+            android:name=".activity.ToStartServiceActivity"
             android:excludeFromRecents="true">
         </activity>
 
         <service
-            android:name=".MyService"
+            android:name=".service.MyService"
             android:enabled="true"
             android:exported="true">
         </service>
 
-        <service android:name=".WifiTileService"
+        <service android:name=".service.WifiTileService"
             android:label="@string/tile_wifi"
             android:icon="@drawable/tile_login"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">

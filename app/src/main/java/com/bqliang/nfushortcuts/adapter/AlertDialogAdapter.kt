@@ -1,4 +1,4 @@
-package com.bqliang.nfushortcuts
+package com.bqliang.nfushortcuts.adapter
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -7,15 +7,20 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bqliang.nfushortcuts.MyItem
+import com.bqliang.nfushortcuts.R
 
-class AlertDialogItemAdapter(activity: Activity, private val resourceId: Int, data:List<AlertDialogItem>):
-    ArrayAdapter<AlertDialogItem>(activity, resourceId, data) {
+class AlertDialogAdapter(
+    activity: Activity,
+     private val resourceId: Int,
+     data:List<MyItem>
+): ArrayAdapter<MyItem>(activity, resourceId, data) {
 
     inner class ViewHolder(val text:TextView, val icon:ImageView)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view: View
-        val viewHolder:ViewHolder
+        val viewHolder: ViewHolder
         if (convertView == null){
             view = LayoutInflater.from(context).inflate(resourceId, parent, false)
             val text:TextView = view.findViewById(R.id.text)

@@ -1,4 +1,4 @@
-package com.bqliang.nfushortcuts
+package com.bqliang.nfushortcuts.service
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -13,6 +13,7 @@ import android.os.Build
 import android.os.IBinder
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
+import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.tools.loginWIFI
 import com.bqliang.nfushortcuts.tools.showToast
 import kotlin.concurrent.thread
@@ -55,7 +56,7 @@ class MyService : Service() {
                     val sp = getSharedPreferences("app_data", MODE_PRIVATE)
                     val id = sp.getString("id", null)
                     val password = sp.getString("password", null)
-                        if (id == null || password == null || id == "" || password == "")
+                        if ( id.isNullOrBlank() || password.isNullOrBlank())
                             resources.getText(R.string.id_or_pw_error_toast).toString().showToast(Toast.LENGTH_LONG)
                         else loginWIFI(id, password)
                     connectivityManager.unregisterNetworkCallback(this)
