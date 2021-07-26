@@ -11,6 +11,7 @@
 
     <string name="login_successfully">Login successfully!</string>
     <string name="login_unsuccessfully">Fail to login</string>
+    <string name="login_timeout">Error: Connection timeout! Please make sure the WiFi you are currently connected is \"NFU_Student\"</string>
 
     <string name="foreground_service_notification_channel">Foreground Service</string>
 

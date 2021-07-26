@@ -3,12 +3,15 @@ package com.bqliang.nfushortcuts.tools
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
+import android.widget.Toast
 import com.bqliang.nfushortcuts.MyItem
 import com.bqliang.nfushortcuts.R
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
+import java.net.SocketTimeoutException
 import java.net.URL
 
 const val LIBRARY_CARD = "http://nfuedu.zftcloud.com/index/electronic_card/index.html?chInfo=ch_share__chsub_CopyLink"
@@ -56,6 +59,8 @@ fun loginWIFI(userId:String, password:String){
         connection = url.openConnection() as HttpURLConnection
         connection.requestMethod = "POST"
         connection.connectTimeout = 3000
+        Log.d("1129","Code:"+connection.responseCode)
+        Log.d("1129","Msg:"+connection.responseMessage)
         connection.apply {
             setRequestProperty("Host","172.16.30.45")
             setRequestProperty("Connection","keep-alive")
@@ -87,8 +92,8 @@ fun loginWIFI(userId:String, password:String){
         if(response.toString().contains("Dr.COMWebLoginID_3.htm")) MyApplication.context.resources.getString(R.string.login_successfully).showToast()
         else MyApplication.context.resources.getString(R.string.login_unsuccessfully).showToast()
 
-    }catch (e:Exception){
-        e.printStackTrace()
+    }catch (e:SocketTimeoutException){
+        MyApplication.context.resources.getString(R.string.login_timeout).showToast(Toast.LENGTH_LONG)
     }finally {
         connection?.disconnect()
     }

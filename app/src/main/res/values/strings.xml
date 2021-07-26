@@ -10,6 +10,7 @@
 
     <string name="login_successfully">登陆成功！</string>
     <string name="login_unsuccessfully">登录失败</string>
+    <string name="login_timeout">连接超时，请确保连接的WiFi为“NFU_Student”</string>
 
     <string name="foreground_service_notification_channel">前台服务通知</string>
 

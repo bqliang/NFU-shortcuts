@@ -7,7 +7,6 @@ import android.widget.AdapterView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.bqliang.nfushortcuts.MyItem
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.AlertDialogAdapter
 import com.bqliang.nfushortcuts.service.MyService
@@ -50,9 +49,9 @@ class PrimaryAlertDialog(private val activity: AppCompatActivity) {
             .create()
 
 
-        val view = LayoutInflater.from(activity).inflate(R.layout.footer_view_layout, null)
+        val footerView = LayoutInflater.from(activity).inflate(R.layout.footer_view_layout, null)
 
-        mainAlertDialog.listView.addFooterView(view)
+        mainAlertDialog.listView.addFooterView(footerView)
 
         // 列表长按事件监听
         mainAlertDialog.listView.onItemLongClickListener =
@@ -68,13 +67,13 @@ class PrimaryAlertDialog(private val activity: AppCompatActivity) {
                 return@OnItemLongClickListener true
             }
 
-        view.findViewById<MaterialCardView>(R.id.card).setOnClickListener {
+        footerView.findViewById<MaterialCardView>(R.id.card).setOnClickListener {
             activity.startForegroundService(Intent(activity, MyService::class.java))
             mainAlertDialog.dismiss()
             activity.finish()
         }
 
-        view.findViewById<MaterialCardView>(R.id.card_of_setting).setOnClickListener{
+        footerView.findViewById<MaterialCardView>(R.id.card_of_setting).setOnClickListener{
             mainAlertDialog.hide()
             SettingAlertDialog(activity,mainAlertDialog)
         }
