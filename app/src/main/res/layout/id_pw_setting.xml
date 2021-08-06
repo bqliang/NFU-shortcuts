@@ -28,7 +28,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        app:helperText="@string/password_help_text"
+        app:helperText="@string/hint_password"
         app:endIconMode="password_toggle"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginHorizontal="24dp"

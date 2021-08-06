@@ -19,11 +19,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoDisplay"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".activity.MainActivity"
+        <activity
+            android:name=".activity.TestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.MainActivity"
             android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -31,27 +38,23 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
-
         <activity
-            android:name=".activity.ToStartServiceActivity"
-            android:excludeFromRecents="true">
-        </activity>
+            android:name=".activity.TempActivity"
+            android:excludeFromRecents="true" />
 
         <service
             android:name=".service.MyService"
             android:enabled="true"
-            android:exported="true">
-        </service>
-
-        <service android:name=".service.WifiTileService"
-            android:label="@string/tile_wifi"
+            android:exported="true" />
+        <service
+            android:name=".service.WifiTileService"
             android:icon="@drawable/tile_login"
+            android:label="@string/tile_captive_portal_login"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

@@ -9,7 +9,6 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
-import android.os.Build
 import android.os.IBinder
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
@@ -27,10 +26,8 @@ class MyService : Service() {
     override fun onCreate() {
         super.onCreate()
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            val channel = NotificationChannel("foreground_service", "前台服务通知", NotificationManager.IMPORTANCE_MIN)
-            notificationManager.createNotificationChannel(channel)
-        }
+        val channel = NotificationChannel("foreground_service", "前台服务通知", NotificationManager.IMPORTANCE_MIN)
+        notificationManager.createNotificationChannel(channel)
 
         val notification = NotificationCompat.Builder(this, "foreground_service")
             .setContentTitle("Title")
@@ -57,14 +54,14 @@ class MyService : Service() {
                     val id = sp.getString("id", null)
                     val password = sp.getString("password", null)
                         if ( id.isNullOrBlank() || password.isNullOrBlank())
-                            resources.getText(R.string.id_or_pw_error_toast).toString().showToast(Toast.LENGTH_LONG)
+                            resources.getText(R.string.error_id_or_pw).toString().showToast(Toast.LENGTH_LONG)
                         else loginWIFI(id, password)
                     connectivityManager.unregisterNetworkCallback(this)
                     }
 
                     override fun onUnavailable() {
                         super.onUnavailable()
-                        resources.getText(R.string.on_unavailable_toast).toString().showToast(Toast.LENGTH_LONG)
+                        resources.getText(R.string.login_unavailable).toString().showToast(Toast.LENGTH_LONG)
                     }
                 },
             2000)

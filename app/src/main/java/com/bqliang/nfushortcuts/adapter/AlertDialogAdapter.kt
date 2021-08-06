@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.bqliang.nfushortcuts.MyItem
+import com.bqliang.nfushortcuts.ShortcutItem
 import com.bqliang.nfushortcuts.R
 
 class AlertDialogAdapter(
     activity: Activity,
      private val resourceId: Int,
-     data:List<MyItem>
-): ArrayAdapter<MyItem>(activity, resourceId, data) {
+     data:List<ShortcutItem>
+): ArrayAdapter<ShortcutItem>(activity, resourceId, data) {
 
     inner class ViewHolder(val text:TextView, val icon:ImageView)
 
@@ -35,7 +35,7 @@ class AlertDialogAdapter(
         val item = getItem(position)
         if (item != null){
             viewHolder.text.text = item.text
-            viewHolder.icon.setImageResource(item.iconId)
+            viewHolder.icon.setImageResource(item.iconResourceId)
         }
         return view
     }

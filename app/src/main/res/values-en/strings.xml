@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">NFU Shortcuts</string>
-    <string name="feeding_developer">Feeding Developer</string>
+    <string name="feed_developer">Feed Developer</string>
     <string name="no_scan_pass">No Scan Pass</string>
     <string name="campus_bus">Campus Bus</string>
-    <string name="electronic_library_card">Library Card</string>
+    <string name="library_card">Library Card</string>
     <string name="access_code">Access Code</string>
-    <string name="wifi">Login NFU WIFI</string>
-    <string name="developer_github">Follow Developer in Github</string>
+    <string name="captive_portal_login">Login NFU WiFi</string>
+    <string name="follow_developer">Follow Developer</string>
 
     <string name="login_successfully">Login successfully!</string>
-    <string name="login_unsuccessfully">Fail to login</string>
-    <string name="login_timeout">Error: Connection timeout! Please make sure the WiFi you are currently connected is \"NFU_Student\"</string>
+    <string name="login_unsuccessfully">Login failed</string>
+    <string name="login_timeout">ERROR: Connection timeout! Please make sure the WiFi you are currently connected is \"NFU_Student\"</string>
 
-    <string name="foreground_service_notification_channel">Foreground Service</string>
+    <string name="notification_channel_foreground_service">Foreground Service</string>
 
-    <string name="setting_dialog_title">Please Enter Details</string>
+    <string name="please_enter_id_pwd">Please Enter Details</string>
     <string name="student_id">Student ID</string>
     <string name="password">Password</string>
-    <string name="password_help_text">DCIP password (not wifi password)</string>
+    <string name="hint_password">( not WiFi password )</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
-    <string name="save_successfully">save successfully!</string>
+    <string name="save_successfully">Save successfully!</string>
 
-    <string name="id_or_pw_error_toast">ID or password is empty, please click gear icon\u2699 to configure information and then try again.</string>
-    <string name="on_unavailable_toast">Your phone is not connected to WIFI, so cannot login.</string>
+    <string name="error_id_or_pw">ID or password is empty, please click gear icon\u2699 to configure information and then try again.</string>
+    <string name="login_unavailable">Your phone is not connected to WiFi, so cannot login.</string>
 
-    <string name="tile_wifi">NFU WIFI</string>
+    <string name="tile_captive_portal_login">NFU WiFi</string>
+    <string name="error_create_pinned_shortcut">Your device not support create pinned shortcut</string>
+    <string name="tooltip_create_pinned_shortcut">Have tried to create shortcut on your desktop</string>
 </resources>

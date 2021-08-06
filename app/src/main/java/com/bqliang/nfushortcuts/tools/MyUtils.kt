@@ -3,10 +3,10 @@ package com.bqliang.nfushortcuts.tools
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.widget.Toast
-import com.bqliang.nfushortcuts.MyItem
+import com.bqliang.nfushortcuts.ShortcutItem
 import com.bqliang.nfushortcuts.R
+import com.bqliang.nfushortcuts.activity.TempActivity
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
@@ -14,37 +14,42 @@ import java.net.HttpURLConnection
 import java.net.SocketTimeoutException
 import java.net.URL
 
-const val LIBRARY_CARD = "http://nfuedu.zftcloud.com/index/electronic_card/index.html?chInfo=ch_share__chsub_CopyLink"
-const val FEEDING_DEVELOPER ="https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
-const val CAMPUS_BUS = "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
-const val ACCESS_CODE = "https://qr.alipay.com/s7x133604ff1cacyyk4fyd3"
-const val QUICK_SCAN_QRCODE = "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
-
-fun getData(): ArrayList<MyItem> {
-    val itemList = ArrayList<MyItem>()
-    itemList.apply {
-        add(MyItem(MyApplication.context.resources.getString(R.string.developer_github), R.mipmap.github_circle))
-        add(MyItem(MyApplication.context.resources.getString(R.string.feeding_developer), R.mipmap.feeding_developer_circle))
-        add(MyItem(MyApplication.context.resources.getString(R.string.electronic_library_card), R.mipmap.library_card_circle))
-        add(MyItem(MyApplication.context.resources.getString(R.string.campus_bus), R.mipmap.campus_bus_circle))
-        add(MyItem(MyApplication.context.resources.getString(R.string.access_code), R.mipmap.access_code_circle))
-        add(MyItem(MyApplication.context.resources.getString(R.string.no_scan_pass), R.mipmap.no_scan_pass_circle))
+fun getData() = ArrayList<ShortcutItem>().apply {
+        add(ShortcutItem(MyApplication.context.resources.getString(R.string.follow_developer), R.mipmap.github_circle))
+        add(ShortcutItem(MyApplication.context.resources.getString(R.string.feed_developer), R.mipmap.feeding_developer_circle))
+        add(ShortcutItem(MyApplication.context.resources.getString(R.string.library_card), R.mipmap.library_card_circle))
+        add(ShortcutItem(MyApplication.context.resources.getString(R.string.campus_bus), R.mipmap.campus_bus_circle))
+        add(ShortcutItem(MyApplication.context.resources.getString(R.string.access_code), R.mipmap.access_code_circle))
+        add(ShortcutItem(MyApplication.context.resources.getString(R.string.no_scan_pass), R.mipmap.no_scan_pass_circle))
     }
-    return itemList
+
+
+fun getMyIntent(position: Int) :Intent {
+
+    val uriString = when(position){
+        0 -> return Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/bqliang"))
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        1 -> "https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
+        2 -> "http://nfuedu.zftcloud.com/index/electronic_card/index.html?chInfo=ch_share__chsub_CopyLink"
+        3 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
+        4 -> "https://qr.alipay.com/s7x133604ff1cacyyk4fyd3"
+        5 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
+        6 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
+        else -> ""
+    }
+
+    val uri = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=" + uriString)
+
+    return  Intent(Intent.ACTION_VIEW, uri)
+        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 }
 
-fun openAlipay(opcode: String){
-    val uri = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=$opcode")
-    val intent = Intent(Intent.ACTION_VIEW, uri)
-        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-    MyApplication.context.startActivity(intent)
-}
 
 fun saveIdPassword(id:String, password:String){
     val sp = MyApplication.context.getSharedPreferences("app_data", MODE_PRIVATE)
     sp.edit().apply {
-        putString("id",id)
-        putString("password",password)
+        putString("id", id)
+        putString("password", password)
         commit()
     }
 }
@@ -59,8 +64,6 @@ fun loginWIFI(userId:String, password:String){
         connection = url.openConnection() as HttpURLConnection
         connection.requestMethod = "POST"
         connection.connectTimeout = 3000
-        Log.d("1129","Code:"+connection.responseCode)
-        Log.d("1129","Msg:"+connection.responseMessage)
         connection.apply {
             setRequestProperty("Host","172.16.30.45")
             setRequestProperty("Connection","keep-alive")

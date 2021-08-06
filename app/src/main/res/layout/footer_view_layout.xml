@@ -24,7 +24,8 @@
                 android:layout_marginVertical="8dp"/>
 
             <TextView
-                android:text="@string/wifi"
+                android:textStyle="bold"
+                android:text="@string/captive_portal_login"
                 android:layout_toEndOf="@+id/icon"
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"

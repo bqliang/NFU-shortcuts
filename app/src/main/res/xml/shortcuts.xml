@@ -2,12 +2,14 @@
     <shortcut
         android:shortcutId="wifi"
         android:icon="@mipmap/login_circle"
-        android:shortcutShortLabel="@string/wifi">
+        android:shortcutShortLabel="@string/captive_portal_login">
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.bqliang.nfuquickjump"
-            android:targetClass="com.bqliang.nfuquickjump.MyActivity"/>
+            android:targetPackage="com.bqliang.nfushortcuts"
+            android:targetClass="com.bqliang.nfushortcuts.activity.TempActivity"/>
+        <!-- 虽然 Class TempActivity 处在 com.bqliang.nfushortcuts.activity，
+            但 targetPackage 只需具体到 com.bqliang.nfushortcuts，否则无法启动 -->
     </shortcut>
 
     <shortcut

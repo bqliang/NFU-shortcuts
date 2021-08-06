@@ -1,5 +1,6 @@
 package com.bqliang.nfushortcuts.dialog
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -10,7 +11,7 @@ import com.bqliang.nfushortcuts.tools.saveIdPassword
 import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class SettingAlertDialog(activity: AppCompatActivity, mainAlertDialog:AlertDialog) {
+class SettingAlertDialog(activity: Activity, mainAlertDialog: AlertDialog? = null) {
 
     init {
         val sp = MyApplication.context
@@ -23,20 +24,20 @@ class SettingAlertDialog(activity: AppCompatActivity, mainAlertDialog:AlertDialo
         password.text = sp.getString("password", "")
 
         MaterialAlertDialogBuilder(activity)
-            .setTitle(MyApplication.context.resources.getText(R.string.setting_dialog_title))
+            .setTitle(MyApplication.context.resources.getText(R.string.please_enter_id_pwd))
             .setView(views)
             .setPositiveButton(MyApplication.context.resources.getText(R.string.save)) { dialog, _ ->
                 saveIdPassword(id.text.toString(), password.text.toString())
                 MyApplication.context.resources.getText(R.string.save_successfully).toString().showToast()
-                mainAlertDialog.show()
+                mainAlertDialog?.show()
                 dialog.dismiss()
             }
             .setNegativeButton(MyApplication.context.resources.getText(R.string.cancel)){ dialog, _ ->
-                mainAlertDialog.show()
+                mainAlertDialog?.show()
                 dialog.dismiss()
             }
             .setOnCancelListener { dialog ->
-                mainAlertDialog.show()
+                mainAlertDialog?.show()
                 dialog.dismiss()
             }
             .create()
