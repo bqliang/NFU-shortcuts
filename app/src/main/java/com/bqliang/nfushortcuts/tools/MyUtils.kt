@@ -6,6 +6,7 @@ import android.net.Uri
 import android.widget.Toast
 import com.bqliang.nfushortcuts.ShortcutItem
 import com.bqliang.nfushortcuts.R
+import com.bqliang.nfushortcuts.activity.FeedbackActivity
 import com.bqliang.nfushortcuts.activity.LibraryCardActivity
 import com.bqliang.nfushortcuts.activity.TempActivity
 import java.io.BufferedReader
@@ -18,6 +19,7 @@ import java.net.URL
 fun getData() = ArrayList<ShortcutItem>().apply {
         add(ShortcutItem(MyApplication.context.resources.getString(R.string.follow_developer), R.mipmap.github_circle))
         add(ShortcutItem(MyApplication.context.resources.getString(R.string.feed_developer), R.mipmap.feeding_developer_circle))
+        add(ShortcutItem(MyApplication.context.getString(R.string.feedback), R.mipmap.feedback_circle))
         add(ShortcutItem(MyApplication.context.resources.getString(R.string.library_card), R.mipmap.library_card_circle))
         add(ShortcutItem(MyApplication.context.resources.getString(R.string.campus_bus), R.mipmap.campus_bus_circle))
         add(ShortcutItem(MyApplication.context.resources.getString(R.string.access_code), R.mipmap.access_code_circle))
@@ -31,13 +33,16 @@ fun getMyIntent(position: Int) :Intent {
         0 -> return Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/bqliang"))
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         1 -> "https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
-        2 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
+        2 -> return Intent(MyApplication.context, FeedbackActivity::class.java)
+            .setAction(Intent.ACTION_VIEW)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        3 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             .setAction(Intent.ACTION_VIEW)
-        3 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
-        4 -> "https://qr.alipay.com/s7x133604ff1cacyyk4fyd3"
-        5 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
-        6 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
+        4 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
+        5 -> "https://qr.alipay.com/s7x133604ff1cacyyk4fyd3"
+        6 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
+        7 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
         else -> ""
     }
 

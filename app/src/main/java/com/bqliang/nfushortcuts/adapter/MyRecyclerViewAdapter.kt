@@ -46,10 +46,11 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>,val activity: Ac
                 when(adapterPosition){
                     0 -> "(´,,•∀•,,`)".showToast(Toast.LENGTH_LONG)
                     1 -> "I am so hungry!".showToast()
-                    2 -> createPinnedShortcut(MyApplication.context.resources.getText(R.string.library_card).toString(), R.mipmap.library_card_circle, getMyIntent(adapterPosition), Shortcut.LIBRARY_CARD)
-                    3 -> createPinnedShortcut(MyApplication.context.resources.getText(R.string.campus_bus).toString(), R.mipmap.campus_bus_circle, getMyIntent(adapterPosition), Shortcut.CAMPUS_BUS)
-                    4 -> createPinnedShortcut(MyApplication.context.resources.getText(R.string.access_code).toString(),R.mipmap.access_code_circle, getMyIntent(adapterPosition), Shortcut.ACCESS_CODE)
-                    5 -> createPinnedShortcut(MyApplication.context.resources.getText(R.string.no_scan_pass).toString(), R.mipmap.no_scan_pass_circle, getMyIntent(adapterPosition), Shortcut.QUICK_SCAN_QRCODE)
+                    2 -> "\ud83c\udf39".showToast()
+                    3 -> createPinnedShortcut(MyApplication.context.resources.getText(R.string.library_card).toString(), R.mipmap.library_card_circle, getMyIntent(adapterPosition), Shortcut.LIBRARY_CARD)
+                    4 -> createPinnedShortcut(MyApplication.context.resources.getText(R.string.campus_bus).toString(), R.mipmap.campus_bus_circle, getMyIntent(adapterPosition), Shortcut.CAMPUS_BUS)
+                    5 -> createPinnedShortcut(MyApplication.context.resources.getText(R.string.access_code).toString(),R.mipmap.access_code_circle, getMyIntent(adapterPosition), Shortcut.ACCESS_CODE)
+                    6 -> createPinnedShortcut(MyApplication.context.resources.getText(R.string.no_scan_pass).toString(), R.mipmap.no_scan_pass_circle, getMyIntent(adapterPosition), Shortcut.QUICK_SCAN_QRCODE)
                 }
                 return@setOnLongClickListener true
             }
@@ -74,7 +75,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>,val activity: Ac
             }
 
             captivePortalItem.setOnLongClickListener {
-                createPinnedShortcut(activity.resources.getString(R.string.captive_portal_login), R.mipmap.login_circle, getMyIntent(6), Shortcut.CAPTIVE_PORTAL_LOGIN)
+                createPinnedShortcut(activity.resources.getString(R.string.captive_portal_login), R.mipmap.login_circle, getMyIntent(7), Shortcut.CAPTIVE_PORTAL_LOGIN)
                 return@setOnLongClickListener true
             }
 

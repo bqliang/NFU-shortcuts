@@ -3,6 +3,7 @@ package com.bqliang.nfushortcuts
 enum class Shortcut {
     FOLLOW_DEVELOPER,
     FEED_DEVELOPER,
+    FEEDBACK,
     LIBRARY_CARD,
     CAMPUS_BUS,
     ACCESS_CODE,
