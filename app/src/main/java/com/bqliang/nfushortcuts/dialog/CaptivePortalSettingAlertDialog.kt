@@ -11,7 +11,7 @@ import com.bqliang.nfushortcuts.tools.saveIdPassword
 import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class SettingAlertDialog(activity: Activity, mainAlertDialog: AlertDialog? = null) {
+class CaptivePortalSettingAlertDialog(activity: Activity, mainAlertDialog: AlertDialog? = null) {
 
     init {
         val sp = MyApplication.context

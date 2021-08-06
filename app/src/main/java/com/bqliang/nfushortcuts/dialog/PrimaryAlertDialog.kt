@@ -70,7 +70,7 @@ class PrimaryAlertDialog(private val activity: AppCompatActivity) {
 
         footerView.findViewById<MaterialCardView>(R.id.card_of_setting).setOnClickListener{
             mainAlertDialog.hide()
-            SettingAlertDialog(activity,mainAlertDialog)
+            CaptivePortalSettingAlertDialog(activity,mainAlertDialog)
         }
 
         mainAlertDialog.show()

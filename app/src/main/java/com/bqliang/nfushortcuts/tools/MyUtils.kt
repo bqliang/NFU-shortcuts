@@ -6,6 +6,7 @@ import android.net.Uri
 import android.widget.Toast
 import com.bqliang.nfushortcuts.ShortcutItem
 import com.bqliang.nfushortcuts.R
+import com.bqliang.nfushortcuts.activity.LibraryCardActivity
 import com.bqliang.nfushortcuts.activity.TempActivity
 import java.io.BufferedReader
 import java.io.DataOutputStream
@@ -30,7 +31,9 @@ fun getMyIntent(position: Int) :Intent {
         0 -> return Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/bqliang"))
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         1 -> "https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
-        2 -> "http://nfuedu.zftcloud.com/index/electronic_card/index.html?chInfo=ch_share__chsub_CopyLink"
+        2 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            .setAction(Intent.ACTION_VIEW)
         3 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
         4 -> "https://qr.alipay.com/s7x133604ff1cacyyk4fyd3"
         5 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
@@ -45,7 +48,7 @@ fun getMyIntent(position: Int) :Intent {
 }
 
 
-fun saveIdPassword(id:String, password:String){
+fun saveIdPassword(id:String, password:String = ""){
     val sp = MyApplication.context.getSharedPreferences("app_data", MODE_PRIVATE)
     sp.edit().apply {
         putString("id", id)

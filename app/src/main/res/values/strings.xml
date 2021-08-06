@@ -28,4 +28,6 @@
     <string name="tile_captive_portal_login">校园网登录</string>
     <string name="error_create_pinned_shortcut">您的设备暂未支持创建固定快捷方式</string>
     <string name="tooltip_create_pinned_shortcut">已尝试为您创建桌面快捷方式</string>
+    <string name="configure_id">配置您的学号信息</string>
+    <string name="tooltip_configure_id">请先点击右上角以设置您的学号信息</string>
 </resources>
