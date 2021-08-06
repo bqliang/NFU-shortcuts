@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bqliang.nfushortcuts.ShortcutItem
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.Shortcut
-import com.bqliang.nfushortcuts.activity.MainActivity
 import com.bqliang.nfushortcuts.dialog.SettingAlertDialog
 import com.bqliang.nfushortcuts.service.MyService
 import com.bqliang.nfushortcuts.tools.MyApplication
@@ -28,11 +27,11 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>,val activity: Ac
     // 并在这个方法当中去绑定数据，
 
     companion object{
-        private val ITEM_TYPE_NORMAL = 0
-        private val ITEM_TYPE_FOOTER = 1
+        private const val ITEM_TYPE_NORMAL = 0
+        private const val ITEM_TYPE_FOOTER = 1
     }
 
-    inner class ViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
+    inner class NormalViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
 
         private val imageView:ImageView = itemView.findViewById(R.id.icon)
         private val textView:TextView = itemView.findViewById(R.id.text)
@@ -65,8 +64,8 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>,val activity: Ac
 
     inner class FooterViewHolder(footerView: View): RecyclerView.ViewHolder(footerView){
 
-        val captivePortalItem: MaterialCardView = footerView.findViewById(R.id.card)
-        val settingIcon: MaterialCardView = footerView.findViewById(R.id.card_of_setting)
+        private val captivePortalItem: MaterialCardView = footerView.findViewById(R.id.card)
+        private val settingIcon: MaterialCardView = footerView.findViewById(R.id.card_of_setting)
 
         init {
             captivePortalItem.setOnClickListener {
@@ -88,7 +87,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>,val activity: Ac
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == ITEM_TYPE_NORMAL){
-            ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.alertdialog_item, parent, false))
+            NormalViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.shortcut_item_view, parent, false))
         }else {
             FooterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.footer_view_layout, parent, false))
         }
@@ -101,7 +100,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>,val activity: Ac
 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is ViewHolder){
+        if (holder is NormalViewHolder){
             holder.bind(data[position])
         }
     }

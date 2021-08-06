@@ -23,7 +23,7 @@ class PrimaryAlertDialog(private val activity: AppCompatActivity) {
     }
 
     private fun setAlertDialog(){
-        val adapter = AlertDialogAdapter(activity, R.layout.alertdialog_item, getData())
+        val adapter = AlertDialogAdapter(activity, R.layout.shortcut_item_view, getData())
 
         mainAlertDialog = MaterialAlertDialogBuilder(activity)
             .setAdapter(adapter) { dialog, which ->
