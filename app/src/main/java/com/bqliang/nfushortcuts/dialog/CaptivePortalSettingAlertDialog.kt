@@ -24,15 +24,15 @@ class CaptivePortalSettingAlertDialog(activity: Activity, mainAlertDialog: Alert
         password.text = sp.getString("password", "")
 
         MaterialAlertDialogBuilder(activity)
-            .setTitle(MyApplication.context.resources.getText(R.string.please_enter_id_pwd))
+            .setTitle(R.string.please_enter_id_pwd)
             .setView(views)
-            .setPositiveButton(MyApplication.context.resources.getText(R.string.save)) { dialog, _ ->
+            .setPositiveButton(R.string.save) { dialog, _ ->
                 saveIdPassword(id.text.toString(), password.text.toString())
-                MyApplication.context.resources.getText(R.string.save_successfully).toString().showToast()
+                MyApplication.context.resources.getString(R.string.save_successfully).showToast()
                 mainAlertDialog?.show()
                 dialog.dismiss()
             }
-            .setNegativeButton(MyApplication.context.resources.getText(R.string.cancel)){ dialog, _ ->
+            .setNegativeButton(R.string.cancel){ dialog, _ ->
                 mainAlertDialog?.show()
                 dialog.dismiss()
             }

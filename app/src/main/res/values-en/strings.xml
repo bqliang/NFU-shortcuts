@@ -30,5 +30,7 @@
     <string name="error_create_pinned_shortcut">Your device not support create pinned shortcut</string>
     <string name="tooltip_create_pinned_shortcut">Have tried to create shortcut on your desktop</string>
     <string name="configure_id">Configure your student ID</string>
-    <string name="tooltip_configure_id">Please click on the top right corner to configure your student ID first</string>
+    <string name="tooltip_configure_id">Please click the button at the bottom right to configure your student ID first</string>
+    <string name="feedback">Feedback</string>
+    <string name="ok">OK</string>
 </resources>

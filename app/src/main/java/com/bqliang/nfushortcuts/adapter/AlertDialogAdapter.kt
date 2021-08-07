@@ -34,8 +34,8 @@ class AlertDialogAdapter(
 
         val item = getItem(position)
         if (item != null){
-            viewHolder.text.text = item.text
-            viewHolder.icon.setImageResource(item.iconResourceId)
+            viewHolder.text.setText(item.textResId)
+            viewHolder.icon.setImageResource(item.iconResId)
         }
         return view
     }

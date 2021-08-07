@@ -1,3 +1,3 @@
 package com.bqliang.nfushortcuts
 
-class ShortcutItem(val text:String, val iconResourceId:Int)
+class ShortcutItem(val textResId:Int, val iconResId:Int)

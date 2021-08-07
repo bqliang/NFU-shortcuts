@@ -17,13 +17,13 @@ import java.net.SocketTimeoutException
 import java.net.URL
 
 fun getData() = ArrayList<ShortcutItem>().apply {
-        add(ShortcutItem(MyApplication.context.resources.getString(R.string.follow_developer), R.mipmap.github_circle))
-        add(ShortcutItem(MyApplication.context.resources.getString(R.string.feed_developer), R.mipmap.feeding_developer_circle))
-        add(ShortcutItem(MyApplication.context.getString(R.string.feedback), R.mipmap.feedback_circle))
-        add(ShortcutItem(MyApplication.context.resources.getString(R.string.library_card), R.mipmap.library_card_circle))
-        add(ShortcutItem(MyApplication.context.resources.getString(R.string.campus_bus), R.mipmap.campus_bus_circle))
-        add(ShortcutItem(MyApplication.context.resources.getString(R.string.access_code), R.mipmap.access_code_circle))
-        add(ShortcutItem(MyApplication.context.resources.getString(R.string.no_scan_pass), R.mipmap.no_scan_pass_circle))
+        add(ShortcutItem(R.string.follow_developer, R.mipmap.github_circle))
+        add(ShortcutItem(R.string.feed_developer, R.mipmap.feeding_developer_circle))
+        add(ShortcutItem(R.string.feedback, R.mipmap.feedback_circle))
+        add(ShortcutItem(R.string.library_card, R.mipmap.library_card_circle))
+        add(ShortcutItem(R.string.campus_bus, R.mipmap.campus_bus_circle))
+        add(ShortcutItem(R.string.access_code, R.mipmap.access_code_circle))
+        add(ShortcutItem(R.string.no_scan_pass, R.mipmap.no_scan_pass_circle))
     }
 
 

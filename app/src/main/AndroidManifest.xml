@@ -20,10 +20,13 @@
         android:theme="@style/Theme.NoDisplay"
         android:usesCleartextTraffic="true">
         <activity
-            android:theme="@style/Theme.NFUShortcuts"
-            android:name=".activity.LibraryCardActivity"
+            android:name=".activity.FeedbackActivity"
+            android:theme="@style/Theme.Feedback"
             android:exported="true" />
-
+        <activity
+            android:name=".activity.LibraryCardActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LibraryCard" />
         <activity
             android:name=".activity.MainActivity"
             android:excludeFromRecents="true">

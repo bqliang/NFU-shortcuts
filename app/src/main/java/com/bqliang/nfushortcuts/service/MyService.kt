@@ -54,14 +54,14 @@ class MyService : Service() {
                     val id = sp.getString("id", null)
                     val password = sp.getString("password", null)
                         if ( id.isNullOrBlank() || password.isNullOrBlank())
-                            resources.getText(R.string.error_id_or_pw).toString().showToast(Toast.LENGTH_LONG)
+                            resources.getString(R.string.error_id_or_pw).showToast(Toast.LENGTH_LONG)
                         else loginWIFI(id, password)
                     connectivityManager.unregisterNetworkCallback(this)
                     }
 
                     override fun onUnavailable() {
                         super.onUnavailable()
-                        resources.getText(R.string.login_unavailable).toString().showToast(Toast.LENGTH_LONG)
+                        resources.getString(R.string.login_unavailable).showToast(Toast.LENGTH_LONG)
                     }
                 },
             2000)
