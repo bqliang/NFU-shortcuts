@@ -32,4 +32,5 @@
     <string name="tooltip_configure_id">请先点击右下角按钮设置您的学号信息</string>
     <string name="feedback">意见反馈</string>
     <string name="ok">好的</string>
+    <string name="wifi_not_enable">WiFi未打开，无法为您登录校园网</string>
 </resources>

@@ -4,7 +4,7 @@ import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
-import com.bqliang.nfushortcuts.ShortcutItem
+import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.activity.FeedbackActivity
 import com.bqliang.nfushortcuts.activity.LibraryCardActivity
@@ -40,13 +40,14 @@ fun getMyIntent(position: Int) :Intent {
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             .setAction(Intent.ACTION_VIEW)
         4 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
-        5 -> "https://qr.alipay.com/s7x133604ff1cacyyk4fyd3"
+        5 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink"))
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         6 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
         7 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
         else -> ""
     }
 
-    val uri = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=" + uriString)
+    val uri = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=$uriString")
 
     return  Intent(Intent.ACTION_VIEW, uri)
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -57,7 +58,7 @@ fun saveIdPassword(id:String, password:String = ""){
     val sp = MyApplication.context.getSharedPreferences("app_data", MODE_PRIVATE)
     sp.edit().apply {
         putString("id", id)
-        putString("password", password)
+        if (password.isBlank()) putString("password", password)
         commit()
     }
 }

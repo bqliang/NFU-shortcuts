@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bqliang.nfushortcuts.ShortcutItem
+import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.tools.getData
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlin.concurrent.thread
 
 class MyBottomSheetDialogFragment:BottomSheetDialogFragment() {
 

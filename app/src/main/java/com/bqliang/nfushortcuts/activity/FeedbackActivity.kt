@@ -1,23 +1,21 @@
 package com.bqliang.nfushortcuts.activity
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
-import com.bqliang.nfushortcuts.R
 import android.webkit.WebViewClient
-import android.content.Intent
-import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.databinding.ActivityFeedbackBinding
-import java.lang.Exception
 
 
 class FeedbackActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFeedbackBinding
 
-    companion object{
+    companion object {
         const val MY_URL = "https://support.qq.com/product/343448?d-wx-push=1"
     }
 

@@ -13,6 +13,7 @@ import android.os.IBinder
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.bqliang.nfushortcuts.R
+import com.bqliang.nfushortcuts.tools.getStringFromSharedPreferences
 import com.bqliang.nfushortcuts.tools.loginWIFI
 import com.bqliang.nfushortcuts.tools.showToast
 import kotlin.concurrent.thread
@@ -50,9 +51,8 @@ class MyService : Service() {
                     override fun onAvailable(network: Network) {
                     super.onAvailable(network)
                     connectivityManager.bindProcessToNetwork(network)
-                    val sp = getSharedPreferences("app_data", MODE_PRIVATE)
-                    val id = sp.getString("id", null)
-                    val password = sp.getString("password", null)
+                    val id = getStringFromSharedPreferences("id", null)
+                    val password = getStringFromSharedPreferences("password", null)
                         if ( id.isNullOrBlank() || password.isNullOrBlank())
                             resources.getString(R.string.error_id_or_pw).showToast(Toast.LENGTH_LONG)
                         else loginWIFI(id, password)

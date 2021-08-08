@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
-import com.bqliang.nfushortcuts.Shortcut
+import com.bqliang.nfushortcuts.model.Shortcut
 import com.bqliang.nfushortcuts.adapter.AlertDialogAdapter
 import com.bqliang.nfushortcuts.service.MyService
 import com.bqliang.nfushortcuts.tools.*

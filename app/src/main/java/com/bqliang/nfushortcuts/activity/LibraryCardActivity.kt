@@ -6,6 +6,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.databinding.ActivityLibraryCardBinding
+import com.bqliang.nfushortcuts.databinding.LibraryCardSettingBinding
+import com.bqliang.nfushortcuts.dialog.LibraryCardSettingAlertDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
@@ -47,7 +49,7 @@ class LibraryCardActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         fab.setOnClickListener {
-
+            LibraryCardSettingAlertDialog(this)
         }
     }
 

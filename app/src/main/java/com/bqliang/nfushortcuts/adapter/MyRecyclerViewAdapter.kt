@@ -9,18 +9,18 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bqliang.nfushortcuts.ShortcutItem
+import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.R
-import com.bqliang.nfushortcuts.Shortcut
+import com.bqliang.nfushortcuts.model.Shortcut
+import com.bqliang.nfushortcuts.activity.TempActivity
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
-import com.bqliang.nfushortcuts.service.MyService
 import com.bqliang.nfushortcuts.tools.MyApplication
 import com.bqliang.nfushortcuts.tools.createPinnedShortcut
 import com.bqliang.nfushortcuts.tools.getMyIntent
 import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.card.MaterialCardView
 
-class MyRecyclerViewAdapter(private val data:List<ShortcutItem>,val activity: Activity):
+class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: Activity):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     // 如果仅有一个ViewHolder，即只有一种 itemView 的时候，就将类型指定为内部类唯一的 ViewHolder，
     // 否则指定为 RecyclerView.ViewHolder，这时必须重写 onBindViewHolder 方法，
@@ -70,7 +70,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>,val activity: Ac
 
         init {
             captivePortalItem.setOnClickListener {
-                activity.startForegroundService(Intent(activity, MyService::class.java))
+                activity.startActivity(Intent(activity, TempActivity::class.java))
                 activity.finish()
             }
 

@@ -33,4 +33,5 @@
     <string name="tooltip_configure_id">Please click the button at the bottom right to configure your student ID first</string>
     <string name="feedback">Feedback</string>
     <string name="ok">OK</string>
+    <string name="wifi_not_enable">WiFi is OFF. Cannot login the campus network</string>
 </resources>

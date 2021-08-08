@@ -1,4 +1,4 @@
-package com.bqliang.nfushortcuts
+package com.bqliang.nfushortcuts.model
 
 enum class Shortcut {
     FOLLOW_DEVELOPER,
