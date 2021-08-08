@@ -3,20 +3,30 @@ plugins {
     id 'kotlin-android'
 }
 
+static def gitCommitCount() {
+    def cmd = 'git rev-list HEAD --count'
+    return cmd.execute().text.trim().toInteger()
+}
+
+static def gitCommitId(){
+    def cmd = 'git rev-parse --short HEAD'
+    return "r" + gitCommitCount() + "." + cmd.execute().text.trim()
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     buildFeatures {
-        viewBinding = true
+        viewBinding true
     }
 
     defaultConfig {
         applicationId "com.bqliang.nfushortcuts"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 1
-        versionName "2.0"
+        versionCode gitCommitCount()
+        versionName gitCommitId()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
