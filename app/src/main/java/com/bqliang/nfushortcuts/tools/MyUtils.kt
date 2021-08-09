@@ -17,33 +17,28 @@ import java.net.SocketTimeoutException
 import java.net.URL
 
 fun getData() = ArrayList<ShortcutItem>().apply {
-        add(ShortcutItem(R.string.follow_developer, R.mipmap.github_circle))
-        add(ShortcutItem(R.string.feed_developer, R.mipmap.feeding_developer_circle))
-        add(ShortcutItem(R.string.feedback, R.mipmap.feedback_circle))
-        add(ShortcutItem(R.string.library_card, R.mipmap.library_card_circle))
-        add(ShortcutItem(R.string.campus_bus, R.mipmap.campus_bus_circle))
-        add(ShortcutItem(R.string.access_code, R.mipmap.access_code_circle))
-        add(ShortcutItem(R.string.no_scan_pass, R.mipmap.no_scan_pass_circle))
+    add(ShortcutItem(R.string.library_card, R.mipmap.library_card_circle))
+    add(ShortcutItem(R.string.campus_bus, R.mipmap.campus_bus_circle))
+    add(ShortcutItem(R.string.access_code, R.mipmap.access_code_circle))
+    add(ShortcutItem(R.string.no_scan_pass, R.mipmap.no_scan_pass_circle))
+    add(ShortcutItem(R.string.captive_portal_login, R.mipmap.login_circle))
+    add(ShortcutItem(R.string.feed_developer, R.mipmap.feeding_developer_circle))
     }
 
 
 fun getMyIntent(position: Int) :Intent {
 
     val uriString = when(position){
-        0 -> return Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/bqliang"))
-            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        1 -> "https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
-        2 -> return Intent(MyApplication.context, FeedbackActivity::class.java)
-            .setAction(Intent.ACTION_VIEW)
-            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        3 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
+        1 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             .setAction(Intent.ACTION_VIEW)
-        4 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
-        5 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink"))
+        2 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
+        3 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink"))
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        6 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
-        7 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
+        4 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
+        5 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        6 -> "https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
         else -> ""
     }
 
@@ -58,7 +53,7 @@ fun saveIdPassword(id:String, password:String = ""){
     val sp = MyApplication.context.getSharedPreferences("app_data", MODE_PRIVATE)
     sp.edit().apply {
         putString("id", id)
-        if (password.isBlank()) putString("password", password)
+        if (password.isNotBlank()) putString("password", password)
         commit()
     }
 }

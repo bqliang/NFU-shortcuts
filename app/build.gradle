@@ -8,10 +8,12 @@ static def gitCommitCount() {
     return cmd.execute().text.trim().toInteger()
 }
 
-static def gitCommitId(){
-    def cmd = 'git rev-parse --short HEAD'
-    return "r" + gitCommitCount() + "." + cmd.execute().text.trim()
+static def getMyVersionName(){
+    def tag = 'git describe'.execute().text.trim()
+    def commitId = 'git rev-parse --short HEAD'.execute().text.trim()
+    return tag + "_r" + gitCommitCount() + "." + commitId
 }
+
 
 android {
     compileSdkVersion 30
@@ -26,7 +28,7 @@ android {
         minSdkVersion 26
         targetSdkVersion 30
         versionCode gitCommitCount()
-        versionName gitCommitId()
+        versionName getMyVersionName()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,6 +49,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.drakeet.about:about:2.4.1'
+    implementation 'com.drakeet.multitype:multitype:4.3.0'
     implementation "com.airbnb.android:lottie:4.0.0"
     implementation 'com.github.jenly1314:zxing-lite:2.1.1'
 

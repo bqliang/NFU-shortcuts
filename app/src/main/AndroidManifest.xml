@@ -21,9 +21,13 @@
         android:theme="@style/Theme.NoDisplay"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.FeedbackActivity"
-            android:theme="@style/Theme.Feedback"
+            android:name=".activity.AboutActivity"
+            android:theme="@style/AppTheme.About"
             android:exported="true" />
+        <activity
+            android:name=".activity.FeedbackActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Feedback" />
         <activity
             android:name=".activity.LibraryCardActivity"
             android:exported="true"
@@ -33,6 +37,7 @@
             android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 

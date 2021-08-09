@@ -1,6 +1,5 @@
 package com.bqliang.nfushortcuts.dialog
 
-import android.content.Context.MODE_PRIVATE
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +8,6 @@ import com.bqliang.nfushortcuts.activity.LibraryCardActivity
 import com.bqliang.nfushortcuts.tools.getStringFromSharedPreferences
 import com.bqliang.nfushortcuts.tools.saveIdPassword
 import com.bqliang.nfushortcuts.tools.showSnackBar
-import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class LibraryCardSettingAlertDialog(activity: AppCompatActivity) {

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <item
-        android:visible="true"
-        android:icon="@drawable/ic_round_settings"
+        android:id="@+id/menu_like"
+        android:icon="@drawable/ic_favorite"
         app:showAsAction="always"
-        android:id="@+id/id_setting"
-        android:title="设置学号">
-    </item>
+        android:title="赞" />
 </menu>

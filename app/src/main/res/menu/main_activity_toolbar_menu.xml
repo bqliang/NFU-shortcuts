@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:visible="true"
+        android:id="@+id/menu_feedback"
+        app:showAsAction="always"
+        android:title="@string/feedback"
+        android:icon="@drawable/ic_feedback"/>
+
+    <item
+        android:visible="true"
+        android:id="@+id/menu_setting"
+        app:showAsAction="always"
+        android:title="@string/setting"
+        android:icon="@drawable/settings"/>
+
+    <item
+        android:visible="true"
+        android:icon="@drawable/ic_about"
+        app:showAsAction="always"
+        android:id="@+id/menu_about"
+        android:title="@string/about"/>
+</menu>

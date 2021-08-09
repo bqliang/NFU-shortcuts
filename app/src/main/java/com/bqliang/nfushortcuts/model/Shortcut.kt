@@ -1,7 +1,6 @@
 package com.bqliang.nfushortcuts.model
 
 enum class Shortcut {
-    FOLLOW_DEVELOPER,
     FEED_DEVELOPER,
     FEEDBACK,
     LIBRARY_CARD,

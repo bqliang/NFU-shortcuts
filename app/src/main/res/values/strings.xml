@@ -29,8 +29,17 @@
     <string name="error_create_pinned_shortcut">您的设备暂未支持创建固定快捷方式</string>
     <string name="tooltip_create_pinned_shortcut">已尝试为您创建桌面快捷方式</string>
     <string name="configure_id">配置您的学号信息</string>
-    <string name="tooltip_configure_id">请先点击右下角按钮设置您的学号信息</string>
+    <string name="tooltip_configure_id">请先点击齿轮按钮设置您的学号信息</string>
     <string name="feedback">意见反馈</string>
     <string name="ok">好的</string>
     <string name="wifi_not_enable">WiFi未打开，无法为您登录校园网</string>
+    <string name="developer">开发者</string>
+    <string name="open_source_licenses">开源许可证</string>
+    <string name="developer_introduction">开发 &amp; 设计</string>
+    <string name="about">关于</string>
+    <string name="setting">设置</string>
+    <string name="thanks_for_encouragement">非常感谢您的鼓励！</string>
+    <string name="special_thanks">特别感谢 (｡・ω・｡)</string>
+    <string name="my_girlfriend_introduction">因为她的鼓励和支持，才让我有动力不断更新打磨这个（烂）APP</string>
+    <string name="name_of_girlfriend">Lis（俺对象）</string>
 </resources>

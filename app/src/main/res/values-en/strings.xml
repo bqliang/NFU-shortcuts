@@ -30,8 +30,17 @@
     <string name="error_create_pinned_shortcut">Your device not support create pinned shortcut</string>
     <string name="tooltip_create_pinned_shortcut">Have tried to create shortcut on your desktop</string>
     <string name="configure_id">Configure your student ID</string>
-    <string name="tooltip_configure_id">Please click the button at the bottom right to configure your student ID first</string>
+    <string name="tooltip_configure_id">Please click the gear button to configure your student ID first</string>
     <string name="feedback">Feedback</string>
     <string name="ok">OK</string>
     <string name="wifi_not_enable">WiFi is OFF. Cannot login the campus network</string>
+    <string name="developer">Developer</string>
+    <string name="open_source_licenses">Open Source Licenses</string>
+    <string name="developer_introduction">develop &amp; design</string>
+    <string name="about">about</string>
+    <string name="setting">setting</string>
+    <string name="thanks_for_encouragement">Thank you so much for your encouragement!</string>
+    <string name="special_thanks">Special Thanks (｡・ω・｡)</string>
+    <string name="my_girlfriend_introduction">Because of her encouragement and support, I have motivation to keep update this app</string>
+    <string name="name_of_girlfriend">Miss Lis (my girlfriend)</string>
 </resources>
