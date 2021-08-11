@@ -9,7 +9,7 @@ static def gitCommitCount() {
 }
 
 static def getMyVersionName(){
-    def tag = 'git describe'.execute().text.trim()
+    def tag = 'git describe --abbrev=0'.execute().text.trim()
     def commitId = 'git rev-parse --short HEAD'.execute().text.trim()
     return tag + "_r" + gitCommitCount() + "." + commitId
 }
@@ -49,6 +49,9 @@ android {
 }
 
 dependencies {
+    def appCenterSdkVersion = '4.1.0'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     implementation 'com.drakeet.about:about:2.4.1'
     implementation 'com.drakeet.multitype:multitype:4.3.0'
     implementation "com.airbnb.android:lottie:4.0.0"

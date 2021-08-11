@@ -2,7 +2,7 @@
 ## 下载  
 * [下载地址 1（推荐）](https://www.pgyer.com/ynis)  
 * [下载地址 2](https://install.appcenter.ms/users/bqliang/apps/nfu-shortcut/distribution_groups/public)   
-<img src="https://github.com/bqliang/NFU-shortcuts/blob/main/qr_code_download.png" width="210">
+<img src="https://github.com/bqliang/NFU-shortcuts/blob/main/pictures/qr_code_download.png" width="210">
 
 ## 截图  
-<img src="https://github.com/bqliang/NFU-shortcuts/blob/main/Screenshot_1.png?raw=true" width="300">
+<img src="https://github.com/bqliang/NFU-shortcuts/blob/main/pictures/screenshots/1.png?raw=true" width="300">

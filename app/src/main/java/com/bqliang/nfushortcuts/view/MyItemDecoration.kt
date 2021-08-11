@@ -27,7 +27,7 @@ class MyItemDecoration(
 
         outRect.right = if (columnOfPosition == spanCount - 1) columnSpacing else columnSpacing / 2
 
-        if(position < spanCount) outRect.top = rowSpacing / 2
+        if(position < spanCount) outRect.top = rowSpacing
         outRect.bottom = rowSpacing
     }
 }

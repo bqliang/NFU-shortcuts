@@ -33,6 +33,7 @@
             android:exported="true"
             android:theme="@style/Theme.LibraryCard" />
         <activity
+            android:theme="@style/Theme.NoDisplay"
             android:name=".activity.MainActivity"
             android:excludeFromRecents="true">
             <intent-filter>
