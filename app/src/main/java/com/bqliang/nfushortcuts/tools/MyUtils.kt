@@ -29,16 +29,16 @@ fun getData() = ArrayList<ShortcutItem>().apply {
 fun getMyIntent(position: Int) :Intent {
 
     val uriString = when(position){
-        1 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
+        0 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             .setAction(Intent.ACTION_VIEW)
-        2 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
-        3 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink"))
+        1 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
+        2 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink"))
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        4 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
-        5 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
+        3 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
+        4 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        6 -> "https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
+        5 -> "https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
         else -> ""
     }
 

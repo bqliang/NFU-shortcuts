@@ -1,6 +1,5 @@
 package com.bqliang.nfushortcuts.activity
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -10,7 +9,6 @@ import com.bqliang.nfushortcuts.BuildConfig
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.tools.showToast
 import com.drakeet.about.*
-import com.google.android.material.appbar.AppBarLayout
 
 
 class AboutActivity : AbsAboutActivity() {
@@ -25,7 +23,8 @@ class AboutActivity : AbsAboutActivity() {
     }
 
     override fun layoutRes(): Int {
-        return R.layout.about_page_layout
+        // 为了解决某些 UI 问题，重写布局
+        return R.layout.my_about_page
     }
 
     override fun onItemsCreated(items: MutableList<Any>) {

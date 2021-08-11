@@ -1,15 +1,14 @@
-package com.bqliang.nfushortcuts
+package com.bqliang.nfushortcuts.test
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.model.Shortcut
 import com.drakeet.multitype.ItemViewBinder
-import com.drakeet.multitype.ItemViewDelegate
 
 class ShortcutViewDelegate : ItemViewBinder<Shortcut, ShortcutViewDelegate.ViewHolder>() {
 
