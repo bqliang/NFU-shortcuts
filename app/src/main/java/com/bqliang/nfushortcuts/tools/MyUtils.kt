@@ -30,7 +30,6 @@ fun getMyIntent(position: Int) :Intent {
 
     val uriString = when(position){
         0 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
-            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             .setAction(Intent.ACTION_VIEW)
         1 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
         2 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink"))

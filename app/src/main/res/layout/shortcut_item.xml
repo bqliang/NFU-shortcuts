@@ -18,7 +18,7 @@
             android:layout_marginVertical="8dp"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text"
+            android:id="@+id/text_id"
             android:layout_gravity="center_vertical"
             android:textAppearance="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"

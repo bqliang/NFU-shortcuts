@@ -15,7 +15,7 @@ class ShortcutViewDelegate : ItemViewBinder<Shortcut, ShortcutViewDelegate.ViewH
 
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         private val imageView: ImageView = itemView.findViewById(R.id.icon)
-        private val textView: TextView = itemView.findViewById(R.id.text)
+        private val textView: TextView = itemView.findViewById(R.id.text_id)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, item: Shortcut) {

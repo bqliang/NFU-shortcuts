@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.databinding.ActivityLibraryCardBinding
-import com.bqliang.nfushortcuts.databinding.LibraryCardSettingBinding
 import com.bqliang.nfushortcuts.dialog.LibraryCardSettingAlertDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -20,7 +19,7 @@ class LibraryCardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLibraryCardBinding
 
     private lateinit var barCode: ImageView
-    private lateinit var text: TextView
+    private lateinit var textId: TextView
     lateinit var fab: FloatingActionButton
     private var id: String? = null
 
@@ -30,7 +29,7 @@ class LibraryCardActivity : AppCompatActivity() {
         binding = ActivityLibraryCardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         barCode = binding.barCode
-        text = binding.text
+        textId = binding.textId
         fab = binding.settingFab
 
         thread {
@@ -48,30 +47,16 @@ class LibraryCardActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        fab.setOnClickListener {
-            LibraryCardSettingAlertDialog(this)
-        }
+        fab.setOnClickListener { LibraryCardSettingAlertDialog(this) }
+        textId.setOnClickListener { LibraryCardSettingAlertDialog(this) }
     }
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.library_card_menu, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when(item.itemId){
-//            R.id.id_setting -> LibraryCardSettingAlertDialog(this)
-//            else -> return super.onOptionsItemSelected(item)
-//        }
-//        return true
-//    }
 
     fun createBarCode(id: String) {
         thread {
             val bitmap = CodeUtils.createBarCode(id, BarcodeFormat.CODE_128, 800, 200)
             runOnUiThread {
                 barCode.setImageBitmap(bitmap)
-                text.text = id
+                textId.text = id
             }
         }
     }
