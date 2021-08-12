@@ -31,7 +31,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: A
 
         init {
             materialCard.setOnClickListener {
-                MyApplication.context.startActivity(getMyIntent(absoluteAdapterPosition))
+                activity.startActivity(getMyIntent(absoluteAdapterPosition))
                 activity.finish()
             }
 

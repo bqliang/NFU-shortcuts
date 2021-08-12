@@ -7,6 +7,7 @@
     android:background="@color/about_page_background">
 
     <com.google.android.material.appbar.AppBarLayout
+        app:elevation="4dp"
         android:id="@+id/header_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/about_page_header_height"
