@@ -15,7 +15,7 @@ class TempActivity : AppCompatActivity() {
         if (wifiManager.isWifiEnabled){
             val intent = Intent(this, MyService::class.java)
             startForegroundService(intent)
-        }else getString(R.string.wifi_not_enable).showToast()
+        }else R.string.wifi_not_enable.showToast()
         this.finish()
     }
 }

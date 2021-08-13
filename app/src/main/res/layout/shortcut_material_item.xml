@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_layout"
+<!--app:cardUseCompatPadding="true"会使卡片周围让出阴影的空间-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
+    android:id="@+id/card_layout"
+    app:cardCornerRadius="12dp"
+    android:translationZ="2dp"
     app:cardElevation="2dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">

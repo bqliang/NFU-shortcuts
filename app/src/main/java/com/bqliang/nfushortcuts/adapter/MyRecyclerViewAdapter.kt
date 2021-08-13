@@ -11,11 +11,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.R
+import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
 import com.bqliang.nfushortcuts.model.Shortcut
 import com.bqliang.nfushortcuts.tools.MyApplication
 import com.bqliang.nfushortcuts.tools.createPinnedShortcut
 import com.bqliang.nfushortcuts.tools.getMyIntent
 import com.bqliang.nfushortcuts.tools.showToast
+import com.bumptech.glide.Glide
 import com.google.android.material.card.MaterialCardView
 
 class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: Activity):
@@ -43,6 +45,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: A
                 PopupMenu(activity, view)
                     .apply {
                         inflate(R.menu.recyclerview_menu)
+                        if (absoluteAdapterPosition == 4) menu.findItem(R.id.recyclerview_menu_configure_account_info).isVisible = true
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) setForceShowIcon(true)
                         setOnMenuItemClickListener {
                             if (it.itemId == R.id.menu_create_pinned_shortcut){
@@ -53,6 +56,8 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: A
                                     3 -> createPinnedShortcut(R.string.no_scan_pass, R.mipmap.no_scan_pass_circle, getMyIntent(absoluteAdapterPosition), Shortcut.QUICK_SCAN_QRCODE)
                                     4 -> createPinnedShortcut(R.string.captive_portal_login, R.mipmap.login_circle, getMyIntent(absoluteAdapterPosition), Shortcut.CAPTIVE_PORTAL_LOGIN)
                                 }
+                            }else if (it.itemId == R.id.recyclerview_menu_configure_account_info){
+                                CaptivePortalSettingAlertDialog(activity)
                             }
                             return@setOnMenuItemClickListener true
                         }
@@ -65,7 +70,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: A
 
         fun bind(item: ShortcutItem){
             itemName.setText(item.textResId)
-            itemIcon.setImageResource(item.iconResId)
+            Glide.with(MyApplication.context).load(item.iconResId).into(itemIcon)
         }
     }
 

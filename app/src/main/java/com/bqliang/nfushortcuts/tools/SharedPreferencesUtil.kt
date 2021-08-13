@@ -2,11 +2,22 @@ package com.bqliang.nfushortcuts.tools
 
 import android.content.Context
 import android.content.SharedPreferences
-import kotlin.concurrent.thread
 
-fun getSharedPreferences(): SharedPreferences = MyApplication.context
-    .getSharedPreferences("app_data", Context.MODE_PRIVATE)
+object SharedPreferencesUtil {
 
-fun getStringFromSharedPreferences(key :String, defValue:String?) =
-    getSharedPreferences().getString(key, defValue)
+    private val sp : SharedPreferences by lazy {
+        MyApplication.context.getSharedPreferences(
+            "app_data",
+            Context.MODE_PRIVATE
+        )
+    }
 
+    fun getString(key: String, defValue: String?) =
+        sp.getString(key, defValue)
+
+    fun saveString(key: String, value: String?){
+        sp.edit()
+            .putString(key, value)
+            .commit()
+    }
+}

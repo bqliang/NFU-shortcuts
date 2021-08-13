@@ -62,7 +62,7 @@ class AboutActivity : AbsAboutActivity() {
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
         when(menuItem.itemId){
             android.R.id.home -> returnMainactivity()
-            R.id.menu_like -> getString(R.string.thanks_for_encouragement).showToast()
+            R.id.menu_like -> R.string.thanks_for_encouragement.showToast()
         }
         return true
     }

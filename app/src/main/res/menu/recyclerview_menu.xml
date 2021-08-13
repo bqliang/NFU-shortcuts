@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/recyclerview_menu_configure_account_info"
+        android:icon="@drawable/settings"
+        android:title="@string/configure_account_info"
+        android:visible="false"/>
+
+    <item
         android:id="@+id/menu_create_pinned_shortcut"
         android:title="@string/create_pinned_shortcut"
         android:icon="@drawable/ic_home"/>

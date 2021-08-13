@@ -7,5 +7,9 @@ fun String.showToast(duration: Int = Toast.LENGTH_SHORT){
 }
 
 fun Int.showToast(duration: Int = Toast.LENGTH_SHORT){
-    Toast.makeText(MyApplication.context, this, duration).show()
+    Toast.makeText(
+        MyApplication.context,
+        MyApplication.context.getString(this),
+        duration)
+        .show()
 }

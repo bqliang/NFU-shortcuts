@@ -13,7 +13,7 @@
         android:visible="true"
         android:id="@+id/menu_setting"
         app:showAsAction="always"
-        android:title="@string/setting"
+        android:title="@string/configure_account_info"
         android:icon="@drawable/settings"/>
 
     <item

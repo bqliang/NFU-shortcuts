@@ -47,17 +47,6 @@ fun getMyIntent(position: Int) :Intent {
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 }
 
-
-fun saveIdPassword(id:String, password:String = ""){
-    val sp = MyApplication.context.getSharedPreferences("app_data", MODE_PRIVATE)
-    sp.edit().apply {
-        putString("id", id)
-        if (password.isNotBlank()) putString("password", password)
-        commit()
-    }
-}
-
-
 fun loginWIFI(userId:String, password:String){
 
     var connection: HttpURLConnection? = null
