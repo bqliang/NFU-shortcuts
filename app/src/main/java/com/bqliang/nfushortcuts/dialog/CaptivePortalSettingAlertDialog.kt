@@ -6,8 +6,11 @@ import android.widget.TextView
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.tools.MyApplication
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
+import com.bqliang.nfushortcuts.tools.TimeUtil
 import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.microsoft.appcenter.Flags
+import com.microsoft.appcenter.analytics.Analytics
 
 class CaptivePortalSettingAlertDialog(activity: Activity) {
 
@@ -25,7 +28,7 @@ class CaptivePortalSettingAlertDialog(activity: Activity) {
                 SharedPreferencesUtil.saveString("id", id.text.toString())
                 SharedPreferencesUtil.saveString("password", password.text.toString())
                 R.string.save_successfully.showToast()
-                dialog.dismiss()
+                Analytics.trackEvent("Save Account Info")
             }
             setNegativeButton(R.string.cancel){ _, _ -> }
             create()

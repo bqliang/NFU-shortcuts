@@ -2,6 +2,7 @@ package com.bqliang.nfushortcuts.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -10,6 +11,7 @@ import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
 import com.bqliang.nfushortcuts.tools.getData
+import com.bqliang.nfushortcuts.tools.showToast
 import com.bqliang.nfushortcuts.view.MyItemDecoration
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             application, "f3e1fad6-dc60-4b23-8101-b7c98999bfdb",
             Analytics::class.java, Crashes::class.java
         )
+        AppCenter.getInstallId().thenAccept { uuid -> AppCenter.setUserId(uuid.toString()) }
 
         views = layoutInflater.inflate(R.layout.bottom_sheet_dialog_layout, null, false)
         views.findViewById<MaterialToolbar>(R.id.toolbar).setOnMenuItemClickListener {

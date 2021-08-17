@@ -9,6 +9,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.databinding.ActivityFeedbackBinding
+import com.microsoft.appcenter.analytics.Analytics
 
 
 class FeedbackActivity : AppCompatActivity() {
@@ -23,6 +24,7 @@ class FeedbackActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFeedbackBinding.inflate(layoutInflater)
+        Analytics.trackEvent("Open Feedback Page")
         setContentView(binding.root)
 
         val myWebViewClient: WebViewClient = object : WebViewClient() {

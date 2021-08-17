@@ -2,6 +2,7 @@ package com.bqliang.nfushortcuts.tools
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.microsoft.appcenter.analytics.Analytics
 
 object SharedPreferencesUtil {
 

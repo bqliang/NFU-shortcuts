@@ -13,6 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
 import com.king.zxing.util.CodeUtils
+import com.microsoft.appcenter.analytics.Analytics
 import kotlin.concurrent.thread
 
 
@@ -50,6 +51,7 @@ class LibraryCardActivity : AppCompatActivity() {
 
         fab.setOnClickListener { LibraryCardSettingAlertDialog(this) }
         idTextView.setOnClickListener { LibraryCardSettingAlertDialog(this) }
+        Analytics.trackEvent("Open Library Card Page")
     }
 
     fun createBarCode(id: String) {
