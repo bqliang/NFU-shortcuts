@@ -11,13 +11,12 @@ static def gitCommitCount() {
 static def getMyVersionName(){
     def tag = 'git describe --abbrev=0'.execute().text.trim()
     def commitId = 'git rev-parse --short HEAD'.execute().text.trim()
-    return tag + "_r" + gitCommitCount() + "." + commitId
+    return "${tag}_r${gitCommitCount()}.${commitId}"
 }
 
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdk 30
 
     buildFeatures {
         viewBinding true
@@ -40,11 +39,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 
     android.applicationVariants.all { variant ->
@@ -63,7 +62,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.drakeet.about:about:2.4.1'
     implementation 'com.drakeet.multitype:multitype:4.3.0'
-    implementation "com.airbnb.android:lottie:4.0.0"
+    implementation 'com.airbnb.android:lottie:4.1.0'
     implementation 'com.github.jenly1314:zxing-lite:2.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'

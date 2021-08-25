@@ -37,8 +37,8 @@ class AboutActivity : AbsAboutActivity() {
                 AppCenter.getInstallId().thenAccept {
                     val cm = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                     cm.setPrimaryClip(ClipData.newPlainText(packageName, it.toString()))
+                    Snackbar.make(view, "UUID已复制到剪贴板", Snackbar.LENGTH_SHORT).show()
                 }
-                Snackbar.make(view, "UUID已复制到剪贴板", Snackbar.LENGTH_SHORT).show()
                 mHits = LongArray(5)
             }
         }

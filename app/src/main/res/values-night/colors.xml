@@ -8,5 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="surface_color">@color/design_default_color_surface</color>
+    <color name="surface_color">@color/design_dark_default_color_surface</color>
 </resources>

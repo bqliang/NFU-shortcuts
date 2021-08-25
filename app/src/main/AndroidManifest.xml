@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NoDisplay"
+        android:theme="@style/Theme.Transparent"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".activity.AboutActivity"
@@ -34,7 +34,7 @@
             android:exported="true"
             android:theme="@style/Theme.LibraryCard" />
         <activity
-            android:theme="@style/Theme.NoDisplay"
+            android:theme="@style/Theme.Transparent"
             android:name=".activity.MainActivity"
             android:excludeFromRecents="true">
             <intent-filter>

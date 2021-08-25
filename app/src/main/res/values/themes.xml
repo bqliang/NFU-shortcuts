@@ -17,12 +17,15 @@
     </style>
 
 
-    <style name="Theme.NoDisplay" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+    <style name="Theme.Transparent" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowNoTitle">true</item>
+        <!--
+        windowIsFloating 是否悬浮在activity之上，将表现得像一个对话框
         <item name="android:windowIsFloating">true</item>
+        -->
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 

@@ -1,12 +1,9 @@
 package com.bqliang.nfushortcuts.tools
 
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
-import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.R
-import com.bqliang.nfushortcuts.activity.FeedbackActivity
 import com.bqliang.nfushortcuts.activity.LibraryCardActivity
 import com.bqliang.nfushortcuts.activity.TempActivity
 import java.io.BufferedReader
@@ -15,15 +12,6 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.SocketTimeoutException
 import java.net.URL
-
-fun getData() = ArrayList<ShortcutItem>().apply {
-    add(ShortcutItem(R.string.library_card, R.mipmap.library_card_circle))
-    add(ShortcutItem(R.string.campus_bus, R.mipmap.campus_bus_circle))
-    add(ShortcutItem(R.string.access_code, R.mipmap.access_code_circle))
-    add(ShortcutItem(R.string.no_scan_pass, R.mipmap.no_scan_pass_circle))
-    add(ShortcutItem(R.string.captive_portal_login, R.mipmap.login_circle))
-    add(ShortcutItem(R.string.feed_developer, R.mipmap.feeding_developer_circle))
-    }
 
 
 fun getMyIntent(position: Int) :Intent {
@@ -37,7 +25,8 @@ fun getMyIntent(position: Int) :Intent {
         3 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
         4 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        5 -> "https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
+        5 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?saId=10000007&qrcode=%68%74%74%70%73%3A%2F%2F%71%72%2E%61%6C%69%70%61%79%2E%63%6F%6D%2F%66%6B%78%31%38%31%39%32%6F%79%63%7A%6C%32%6C%6E%65%78%75%78%75%64%31%3F%5F%73%3D%77%65%62%2D%6F%74%68%65%72"))
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         else -> ""
     }
 
