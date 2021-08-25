@@ -18,6 +18,6 @@ class TempActivity : AppCompatActivity() {
             startForegroundService(intent)
             Analytics.trackEvent("Captive Portal Login")
         }else R.string.wifi_not_enable.showToast()
-        this.finish()
+        finish()
     }
 }

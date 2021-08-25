@@ -7,7 +7,6 @@
     <string name="library_card">Library Card</string>
     <string name="access_code">Access Code</string>
     <string name="captive_portal_login">Login NFU WiFi</string>
-    <string name="follow_developer">Follow Developer</string>
 
     <string name="login_successfully">Login successfully!</string>
     <string name="login_unsuccessfully">Login failed</string>
@@ -45,4 +44,8 @@
     <string name="name_of_girlfriend">Miss Lis (my girlfriend)</string>
     <string name="create_pinned_shortcut">Create desktop shortcut</string>
     <string name="configure_account_info">configure account info</string>
+    <string name="kfc">KFC</string>
+    <string name="alipay_code">Alipay Code</string>
+    <string name="share">Share NFU Shortcut with friends</string>
+    <string name="share_dialog_message">The download link has been copied to the clipboard, do you want to share it with your friends by opening WeChat immediately?</string>
 </resources>

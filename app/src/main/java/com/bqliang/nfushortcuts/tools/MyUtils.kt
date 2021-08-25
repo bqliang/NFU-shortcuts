@@ -1,11 +1,15 @@
 package com.bqliang.nfushortcuts.tools
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.activity.LibraryCardActivity
 import com.bqliang.nfushortcuts.activity.TempActivity
+import com.bqliang.nfushortcuts.model.Shortcut
+import com.drakeet.about.AbsAboutActivity
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
@@ -14,26 +18,22 @@ import java.net.SocketTimeoutException
 import java.net.URL
 
 
-fun getMyIntent(position: Int) :Intent {
+fun getIntent(shortcut: Shortcut) :Intent {
 
-    val uriString = when(position){
-        0 -> return Intent(MyApplication.context, LibraryCardActivity::class.java)
-            .setAction(Intent.ACTION_VIEW)
-        1 -> "http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
-        2 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink"))
-            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        3 -> "http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
-        4 -> return Intent(MyApplication.context, TempActivity::class.java).setAction(Intent.ACTION_VIEW)
-            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        5 -> return Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?saId=10000007&qrcode=%68%74%74%70%73%3A%2F%2F%71%72%2E%61%6C%69%70%61%79%2E%63%6F%6D%2F%66%6B%78%31%38%31%39%32%6F%79%63%7A%6C%32%6C%6E%65%78%75%78%75%64%31%3F%5F%73%3D%77%65%62%2D%6F%74%68%65%72"))
-            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        else -> ""
+    val intent = Intent().setAction(Intent.ACTION_VIEW)
+
+    when(shortcut){
+        Shortcut.LIBRARY_CARD -> { return intent.setClass(MyApplication.context, LibraryCardActivity::class.java) }
+        Shortcut.CAMPUS_BUS -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink")
+        Shortcut.ACCESS_CODE -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink")
+        Shortcut.QUICK_SCAN_QRCODE -> { intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink") }
+        Shortcut.CAPTIVE_PORTAL_LOGIN -> { intent.setClass(MyApplication.context, TempActivity::class.java) }
+        Shortcut.FEED_DEVELOPER -> { intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=https://qr.alipay.com/fkx18192oyczl2lnexuxud1") }
+        Shortcut.KFC -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex&enbsv=0.2.2108231924.16&chInfo=ch_share__chsub_CopyLink")
+        Shortcut.ALIPAY_CODE -> intent.data = Uri.parse("alipayqr://platformapi/startapp?appId=20000056")
     }
-
-    val uri = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=$uriString")
-
-    return  Intent(Intent.ACTION_VIEW, uri)
-        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    return intent
 }
 
 fun loginWIFI(userId:String, password:String){

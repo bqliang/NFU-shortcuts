@@ -6,7 +6,6 @@
     <string name="library_card">电子借阅卡</string>
     <string name="access_code">门禁码</string>
     <string name="captive_portal_login">校园网登录</string>
-    <string name="follow_developer">关注开发者</string>
 
     <string name="login_successfully">登陆成功！</string>
     <string name="login_unsuccessfully">登录失败！</string>
@@ -44,4 +43,8 @@
     <string name="name_of_girlfriend">Lis（俺对象）</string>
     <string name="create_pinned_shortcut">创建桌面快捷方式</string>
     <string name="configure_account_info">配置校园网账号信息</string>
+    <string name="kfc">KFC点餐</string>
+    <string name="alipay_code">付款码</string>
+    <string name="share">与好友分享NFU捷径</string>
+    <string name="share_dialog_message">下载链接已复制到剪贴板，是否立刻打开微信分享给好友？</string>
 </resources>

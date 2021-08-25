@@ -24,7 +24,7 @@ class CaptivePortalSettingAlertDialog(activity: Activity) {
         MaterialAlertDialogBuilder(activity).apply {
             setTitle(R.string.please_enter_id_pwd)
             setView(views)
-            setPositiveButton(R.string.save) { dialog, _ ->
+            setPositiveButton(R.string.save) { _, _ ->
                 SharedPreferencesUtil.saveString("id", id.text.toString())
                 SharedPreferencesUtil.saveString("password", password.text.toString())
                 R.string.save_successfully.showToast()

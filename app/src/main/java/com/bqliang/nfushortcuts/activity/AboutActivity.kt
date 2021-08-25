@@ -18,6 +18,7 @@ import com.microsoft.appcenter.analytics.Analytics
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import com.bqliang.nfushortcuts.tools.ClipboardUtil
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -35,8 +36,7 @@ class AboutActivity : AbsAboutActivity() {
             mHits[4] = SystemClock.uptimeMillis()
             if (mHits[0] > mHits[4] - 1200){
                 AppCenter.getInstallId().thenAccept {
-                    val cm = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    cm.setPrimaryClip(ClipData.newPlainText(packageName, it.toString()))
+                    ClipboardUtil.copyText(it.toString())
                     Snackbar.make(view, "UUID已复制到剪贴板", Snackbar.LENGTH_SHORT).show()
                 }
                 mHits = LongArray(5)
