@@ -47,4 +47,5 @@
     <string name="alipay_code">付款码</string>
     <string name="share">与好友分享NFU捷径</string>
     <string name="share_dialog_message">下载链接已复制到剪贴板，是否立刻打开微信分享给好友？</string>
+    <string name="health_code">粤康码</string>
 </resources>

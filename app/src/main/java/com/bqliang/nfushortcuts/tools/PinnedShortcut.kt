@@ -42,6 +42,10 @@ fun createPinnedShortcut(shortcut:Shortcut){
             labelResId = R.string.alipay_code
             iconResourceId = R.mipmap.item_alipay_code
         }
+        Shortcut.HEALTH_CODE -> {
+            labelResId = R.string.health_code
+            iconResourceId = R.mipmap.item_health_code
+        }
     }
 
 

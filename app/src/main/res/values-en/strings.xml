@@ -48,4 +48,5 @@
     <string name="alipay_code">Alipay Code</string>
     <string name="share">Share NFU Shortcut with friends</string>
     <string name="share_dialog_message">The download link has been copied to the clipboard, do you want to share it with your friends by opening WeChat immediately?</string>
+    <string name="health_code">GHC Code</string>
 </resources>

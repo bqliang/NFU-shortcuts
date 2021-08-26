@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             add(ShortcutItem(R.string.feed_developer, R.mipmap.item_feed_developer))
             add(ShortcutItem(R.string.kfc, R.mipmap.item_kfc))
             add(ShortcutItem(R.string.alipay_code, R.mipmap.item_alipay_code))
+            add(ShortcutItem(R.string.health_code, R.mipmap.item_health_code))
         }
     }
 

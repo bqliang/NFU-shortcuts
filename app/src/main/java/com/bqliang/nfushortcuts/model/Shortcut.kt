@@ -8,5 +8,6 @@ enum class Shortcut {
     CAPTIVE_PORTAL_LOGIN,
     FEED_DEVELOPER,
     KFC,
-    ALIPAY_CODE
+    ALIPAY_CODE,
+    HEALTH_CODE
 }
