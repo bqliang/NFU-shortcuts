@@ -48,4 +48,7 @@
     <string name="share">与好友分享NFU捷径</string>
     <string name="share_dialog_message">下载链接已复制到剪贴板，是否立刻打开微信分享给好友？</string>
     <string name="health_code">粤康码</string>
+    <string name="no">不</string>
+    <string name="download_unionpay_dialog_message">由于NFU捷径打开的粤康码为云闪付小程序（而非微信小程序），所以您必须先安装云闪付APP，是否跳转应用市场下载？</string>
+    <string name="not_yet_install_unionpay">您尚未安装云闪付</string>
 </resources>

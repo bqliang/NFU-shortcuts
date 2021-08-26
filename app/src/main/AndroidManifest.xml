@@ -50,6 +50,9 @@
             android:name=".activity.TempActivity"
             android:excludeFromRecents="true" />
 
+        <activity android:name=".activity.TempHealthCodeActivity"
+            android:excludeFromRecents="true"/>
+
         <service
             android:name=".service.MyService"
             android:enabled="true"
@@ -64,5 +67,11 @@
             </intent-filter>
         </service>
     </application>
+
+    <queries>
+        <package android:name="com.eg.android.AlipayGphone"/>
+        <package android:name="com.tencent.mm"/>
+        <package android:name="com.unionpay"/>
+    </queries>
 
 </manifest>

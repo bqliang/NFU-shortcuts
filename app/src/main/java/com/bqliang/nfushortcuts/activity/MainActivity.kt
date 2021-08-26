@@ -22,6 +22,8 @@ import com.microsoft.appcenter.crashes.Crashes
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var bottomSheetDialog : BottomSheetDialog
+
     companion object {
         val itemList = ArrayList<ShortcutItem>().apply {
             add(ShortcutItem(R.string.library_card, R.mipmap.item_library_card))
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             Analytics::class.java, Crashes::class.java
         )
 
-        BottomSheetDialog(this, R.style.Theme_MyBottomSheetDialog).apply {
+        bottomSheetDialog = BottomSheetDialog(this, R.style.Theme_MyBottomSheetDialog).apply {
             setContentView(R.layout.bottom_sheet_dialog_layout)
 
             findViewById<RecyclerView>(R.id.my_recyclerview)?.apply {

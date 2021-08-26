@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.R
+import com.bqliang.nfushortcuts.activity.MainActivity
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
 import com.bqliang.nfushortcuts.model.Shortcut
 import com.bqliang.nfushortcuts.tools.*
@@ -20,7 +21,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: Activity):
+class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: MainActivity):
     RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
     // 如果仅有一个ViewHolder，即只有一种 itemView 的时候，就将类型指定为内部类唯一的 ViewHolder，
     // 否则指定为 RecyclerView.ViewHolder
@@ -34,6 +35,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: A
         init {
             materialCard.setOnClickListener {
                 activity.startActivity(getIntent(Shortcut.values()[absoluteAdapterPosition]))
+                activity.bottomSheetDialog.dismiss()
                 activity.finish()
             }
 

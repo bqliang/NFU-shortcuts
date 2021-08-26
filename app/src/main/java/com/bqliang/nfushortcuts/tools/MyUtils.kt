@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.activity.LibraryCardActivity
 import com.bqliang.nfushortcuts.activity.TempActivity
+import com.bqliang.nfushortcuts.activity.TempHealthCodeActivity
 import com.bqliang.nfushortcuts.model.Shortcut
 import com.drakeet.about.AbsAboutActivity
 import java.io.BufferedReader
@@ -31,7 +32,7 @@ fun getIntent(shortcut: Shortcut) :Intent {
         Shortcut.FEED_DEVELOPER -> { intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=https://qr.alipay.com/fkx18192oyczl2lnexuxud1") }
         Shortcut.KFC -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex&enbsv=0.2.2108231924.16&chInfo=ch_share__chsub_CopyLink")
         Shortcut.ALIPAY_CODE -> intent.data = Uri.parse("alipayqr://platformapi/startapp?appId=20000056")
-        Shortcut.HEALTH_CODE -> intent.data = Uri.parse("upwallet://applet?encryptAppId=bb2b4babcbfd06bc&toLink=https%3A%2F%2Fywtb.fpsd.unionpay.com%2Fpub%2Fjmas%2Fjmasbucket%2Fjmopen_files%2Funzip%2F4c94e5e6d269477983c5992bfd97d95e%2Fgdykm%2Findex.html%23%2F%3Fapplicationid%3D9fc01b17589946619b461489a0f35c5c%26channelid%3D0108%26state%3Dsuccess%26openid%3DiVn790TUJoNn2WcCoyyGSvpcbJc1kFC490yEZcz%252BHicHKko7mk9ut%252BbXC447RjDW&scenarioId=1006")
+        Shortcut.HEALTH_CODE -> { return intent.setClass(MyApplication.context, TempHealthCodeActivity::class.java) }
     }
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     return intent
