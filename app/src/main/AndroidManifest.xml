@@ -47,7 +47,7 @@
                 android:resource="@xml/shortcuts" />
         </activity>
         <activity
-            android:name=".activity.TempActivity"
+            android:name=".activity.TempCaptivePortalLoginActivity"
             android:excludeFromRecents="true" />
 
         <activity android:name=".activity.TempHealthCodeActivity"

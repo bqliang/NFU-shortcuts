@@ -33,13 +33,13 @@
     </shortcut>
 
     <shortcut
-        android:shortcutId="library_card"
-        android:icon="@mipmap/item_library_card"
-        android:shortcutShortLabel="@string/library_card">
+        android:shortcutId="health_code"
+        android:icon="@mipmap/item_health_code"
+        android:shortcutShortLabel="@string/health_code">
 
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.bqliang.nfushortcuts"
-            android:targetClass="com.bqliang.nfushortcuts.activity.LibraryCardActivity"/>
+            android:targetClass="com.bqliang.nfushortcuts.activity.TempHealthCodeActivity"/>
     </shortcut>
 </shortcuts>

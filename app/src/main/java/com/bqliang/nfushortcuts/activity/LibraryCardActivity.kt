@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.databinding.ActivityLibraryCardBinding
-import com.bqliang.nfushortcuts.dialog.LibraryCardSettingAlertDialog
+import com.bqliang.nfushortcuts.dialog.IDSettingAlertDialog
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,7 +39,7 @@ class LibraryCardActivity : AppCompatActivity() {
             id = SharedPreferencesUtil.getString("id",null)
             if (id.isNullOrBlank()){
                 Snackbar.make(fab, R.string.tooltip_configure_id, Snackbar.LENGTH_SHORT)
-                    .setAction(R.string.ok){ LibraryCardSettingAlertDialog(this) }
+                    .setAction(R.string.ok){ IDSettingAlertDialog(this) }
                     .show()
             }else{
                 createBarCode(id!!)
@@ -49,8 +49,8 @@ class LibraryCardActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        fab.setOnClickListener { LibraryCardSettingAlertDialog(this) }
-        idTextView.setOnClickListener { LibraryCardSettingAlertDialog(this) }
+        fab.setOnClickListener { IDSettingAlertDialog(this) }
+        idTextView.setOnClickListener { IDSettingAlertDialog(this) }
         Analytics.trackEvent("Open Library Card Page")
     }
 

@@ -1,16 +1,13 @@
 package com.bqliang.nfushortcuts.tools
 
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.activity.LibraryCardActivity
-import com.bqliang.nfushortcuts.activity.TempActivity
+import com.bqliang.nfushortcuts.activity.TempCaptivePortalLoginActivity
 import com.bqliang.nfushortcuts.activity.TempHealthCodeActivity
 import com.bqliang.nfushortcuts.model.Shortcut
-import com.drakeet.about.AbsAboutActivity
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
@@ -28,7 +25,7 @@ fun getIntent(shortcut: Shortcut) :Intent {
         Shortcut.CAMPUS_BUS -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink")
         Shortcut.ACCESS_CODE -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink")
         Shortcut.QUICK_SCAN_QRCODE -> { intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink") }
-        Shortcut.CAPTIVE_PORTAL_LOGIN -> { intent.setClass(MyApplication.context, TempActivity::class.java) }
+        Shortcut.CAPTIVE_PORTAL_LOGIN -> { intent.setClass(MyApplication.context, TempCaptivePortalLoginActivity::class.java) }
         Shortcut.FEED_DEVELOPER -> { intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=https://qr.alipay.com/fkx18192oyczl2lnexuxud1") }
         Shortcut.KFC -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex&enbsv=0.2.2108231924.16&chInfo=ch_share__chsub_CopyLink")
         Shortcut.ALIPAY_CODE -> intent.data = Uri.parse("alipayqr://platformapi/startapp?appId=20000056")

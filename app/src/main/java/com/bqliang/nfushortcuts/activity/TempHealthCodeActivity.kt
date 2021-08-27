@@ -36,6 +36,10 @@ class TempHealthCodeActivity : AppCompatActivity() {
                     dialog.dismiss()
                     finish()
                 }
+                .setOnCancelListener { dialog ->
+                    dialog.dismiss()
+                    finish()
+                }
                 .show()
         }
     }

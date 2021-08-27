@@ -13,12 +13,19 @@ object SharedPreferencesUtil {
         )
     }
 
-    fun getString(key: String, defValue: String?) =
-        sp.getString(key, defValue)
+    fun getString(key: String, defValue: String?) = sp.getString(key, defValue)
 
     fun saveString(key: String, value: String?){
         sp.edit()
             .putString(key, value)
+            .commit()
+    }
+
+    fun getBoolean(key: String, defValue: Boolean) = sp.getBoolean(key,defValue)
+
+    fun saveBoolean(key: String, value: Boolean){
+        sp.edit()
+            .putBoolean(key, value)
             .commit()
     }
 }

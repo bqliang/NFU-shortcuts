@@ -51,7 +51,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: M
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) setForceShowIcon(true)
                     setOnMenuItemClickListener {
                         if (it.itemId == R.id.menu_create_pinned_shortcut){
-                            createPinnedShortcut(selectItem)
+                            createPinnedShortcut(selectItem, activity)
                         }else if (it.itemId == R.id.recyclerview_menu_configure_account_info){
                             CaptivePortalSettingAlertDialog(activity)
                         }
