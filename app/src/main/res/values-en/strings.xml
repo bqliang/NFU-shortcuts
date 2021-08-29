@@ -65,4 +65,5 @@
     <string name="brother">Brother</string>
     <string name="phone_num_copied">The phone number has been copied to the clipboard</string>
     <string name="please_choose_driver">Please choose a driver</string>
+    <string name="no_update_available">No update available</string>
 </resources>

@@ -64,4 +64,5 @@
     <string name="brother">小白哥哥</string>
     <string name="phone_num_copied">电话号码已复制到剪贴板</string>
     <string name="please_choose_driver">请选择一位司机</string>
+    <string name="no_update_available">已经是最新版本</string>
 </resources>

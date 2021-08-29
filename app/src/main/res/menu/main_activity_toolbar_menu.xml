@@ -37,6 +37,7 @@
         android:title="@string/about"/>
 
     <item
+        app:showAsAction="never"
         android:visible="true"
         android:id="@+id/menu_check_updates"
         android:title="检查更新"/>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat.apply
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -53,9 +54,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Distribute.disableAutomaticCheckForUpdate()
+        Distribute.setEnabledForDebuggableBuild(true)
         Distribute.setListener(MyDistributeListener())
-        Distribute.setUpdateTrack(UpdateTrack.PRIVATE)
         AppCenter.start(
             application, "f3e1fad6-dc60-4b23-8101-b7c98999bfdb",
             Analytics::class.java, Crashes::class.java, Distribute::class.java
