@@ -19,9 +19,8 @@ class CallXiaobaiActivity : AppCompatActivity() {
 
     private val drivers : List<Driver> by lazy {
         ArrayList<Driver>().apply {
-            add(Driver(R.string.uncle, "13527758146", R.mipmap.item_call_xiaobai))
-            add(Driver(R.string.aunt, "13539842533", R.mipmap.item_call_xiaobai))
-            add(Driver(R.string.brother, "10086", R.mipmap.item_call_xiaobai))
+            add(Driver(R.string.uncle, "13527758146", R.mipmap.driver_uncle))
+            add(Driver(R.string.aunt, "13539842533", R.mipmap.driver_aunt))
         }
     }
 

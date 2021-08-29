@@ -35,4 +35,9 @@
         app:showAsAction="always"
         android:id="@+id/menu_about"
         android:title="@string/about"/>
+
+    <item
+        android:visible="true"
+        android:id="@+id/menu_check_updates"
+        android:title="检查更新"/>
 </menu>

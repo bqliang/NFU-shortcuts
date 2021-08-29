@@ -59,9 +59,9 @@
     <string name="allow_call_phone_in_setting">您需要在设置中手动授予拨打电话的必要权限。</string>
     <string name="explain_why_phone_call_permission">“呼叫小白”需要您授予我们以下权限</string>
     <string name="switch_layout">切换布局</string>
-    <string name="uncle">南方叔叔</string>
-    <string name="aunt">南方阿姨</string>
-    <string name="brother">南方哥哥</string>
+    <string name="uncle">小白叔叔</string>
+    <string name="aunt">小白阿姨</string>
+    <string name="brother">小白哥哥</string>
     <string name="phone_num_copied">电话号码已复制到剪贴板</string>
     <string name="please_choose_driver">请选择一位司机</string>
 </resources>

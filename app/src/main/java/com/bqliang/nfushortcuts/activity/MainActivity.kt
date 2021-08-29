@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bqliang.nfushortcuts.MyDistributeListener
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
@@ -22,6 +23,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import com.microsoft.appcenter.distribute.Distribute
+import com.microsoft.appcenter.distribute.UpdateTrack
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,9 +54,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        Distribute.setListener(MyDistributeListener())
+        Distribute.setUpdateTrack(UpdateTrack.PRIVATE)
         AppCenter.start(
             application, "f3e1fad6-dc60-4b23-8101-b7c98999bfdb",
-            Analytics::class.java, Crashes::class.java
+            Analytics::class.java, Crashes::class.java, Distribute::class.java
         )
 
         bottomSheetDialog = BottomSheetDialog(this, R.style.Theme_MyBottomSheetDialog).apply {
@@ -90,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                             .setNegativeButton(R.string.cancel){ _, _ -> }
                             .show()
                     }
+                    R.id.menu_check_updates -> Distribute.checkForUpdate()
                     else -> {}
                 }
                 return@setOnMenuItemClickListener true

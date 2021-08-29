@@ -1,8 +1,5 @@
 package com.bqliang.nfushortcuts.adapter
 
-import android.app.Activity
-import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +16,6 @@ import com.bqliang.nfushortcuts.model.Shortcut
 import com.bqliang.nfushortcuts.tools.*
 import com.bumptech.glide.Glide
 import com.google.android.material.card.MaterialCardView
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: MainActivity):
     RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
@@ -46,7 +42,7 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: M
                     return@setOnLongClickListener true
                 }
                 PopupMenu(activity, view).apply {
-                    inflate(R.menu.recyclerview_menu)
+                    inflate(R.menu.recyclerview_pop_menu)
                     if (selectItem == Shortcut.CAPTIVE_PORTAL_LOGIN) menu.findItem(R.id.recyclerview_menu_configure_account_info).isVisible = true
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) setForceShowIcon(true)
                     setOnMenuItemClickListener {
