@@ -66,4 +66,10 @@
     <string name="phone_num_copied">The phone number has been copied to the clipboard</string>
     <string name="please_choose_driver">Please choose a driver</string>
     <string name="no_update_available">No update available</string>
+    <string name="download">Download</string>
+    <string name="ask_me_in_a_day">Ask me in a day</string>
+    <string name="update_available">App update available</string>
+    <string name="new_version">"New version: "</string>
+    <string name="size">"Size: "</string>
+    <string name="what_is_new">"What's new: "</string>
 </resources>

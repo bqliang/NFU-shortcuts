@@ -65,4 +65,10 @@
     <string name="phone_num_copied">电话号码已复制到剪贴板</string>
     <string name="please_choose_driver">请选择一位司机</string>
     <string name="no_update_available">已经是最新版本</string>
+    <string name="download">下载</string>
+    <string name="ask_me_in_a_day">一天内询问我</string>
+    <string name="update_available">可用的应用更新</string>
+    <string name="new_version">新版本：</string>
+    <string name="size">文件大小：</string>
+    <string name="what_is_new">新版变化：</string>
 </resources>

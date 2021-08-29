@@ -6,11 +6,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.GravityCompat.apply
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bqliang.nfushortcuts.MyDistributeListener
+import com.bqliang.nfushortcuts.listener.MyDistributeListener
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
@@ -25,7 +24,6 @@ import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.microsoft.appcenter.distribute.Distribute
-import com.microsoft.appcenter.distribute.UpdateTrack
 
 
 class MainActivity : AppCompatActivity() {
