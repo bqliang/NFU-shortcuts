@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import com.bqliang.nfushortcuts.R
+import com.bqliang.nfushortcuts.activity.CallXiaobaiActivity
 import com.bqliang.nfushortcuts.activity.LibraryCardActivity
 import com.bqliang.nfushortcuts.activity.TempCaptivePortalLoginActivity
 import com.bqliang.nfushortcuts.activity.TempHealthCodeActivity
@@ -30,6 +31,7 @@ fun getIntent(shortcut: Shortcut) :Intent {
         Shortcut.KFC -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex&enbsv=0.2.2108231924.16&chInfo=ch_share__chsub_CopyLink")
         Shortcut.ALIPAY_CODE -> intent.data = Uri.parse("alipayqr://platformapi/startapp?appId=20000056")
         Shortcut.HEALTH_CODE -> { return intent.setClass(MyApplication.context, TempHealthCodeActivity::class.java) }
+        Shortcut.CALL_XIAOBAI -> { return intent.setClass(MyApplication.context, CallXiaobaiActivity::class.java) }
     }
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     return intent

@@ -25,7 +25,7 @@ fun tipsForPinnedShortcutAlertDialog(activity: MainActivity){
                 ifDoNotRemind = isChecked
             }
 
-        val dialog = MaterialAlertDialogBuilder(activity)
+        MaterialAlertDialogBuilder(activity)
             .setTitle(R.string.tooltip_create_pinned_shortcut)
             .setMessage(R.string.tips_of_grant_permission)
             .setView(view)
@@ -36,7 +36,7 @@ fun tipsForPinnedShortcutAlertDialog(activity: MainActivity){
                 intent.data = uri
                 activity.startActivity(intent)
             }
-            .setNegativeButton(R.string.already_know){ _, dialog ->
+            .setNegativeButton(R.string.already_know){ _, _ ->
                 SharedPreferencesUtil.saveBoolean(KEY, ifDoNotRemind)
             }
             .show()

@@ -9,5 +9,6 @@ enum class Shortcut {
     FEED_DEVELOPER,
     KFC,
     ALIPAY_CODE,
-    HEALTH_CODE
+    HEALTH_CODE,
+    CALL_XIAOBAI
 }

@@ -36,14 +36,14 @@
     <string name="developer">Developer</string>
     <string name="open_source_licenses">Open Source Licenses</string>
     <string name="developer_introduction">develop &amp; design</string>
-    <string name="about">about</string>
+    <string name="about">About</string>
     <string name="setting">setting</string>
     <string name="thanks_for_encouragement">Thank you so much for your encouragement!</string>
     <string name="special_thanks">Special Thanks (｡・ω・｡)</string>
     <string name="my_girlfriend_introduction">Because of her encouragement and support, I have motivation to keep update this app</string>
     <string name="name_of_girlfriend">Miss Lis (my girlfriend)</string>
     <string name="create_pinned_shortcut">Create desktop shortcut</string>
-    <string name="configure_account_info">configure account info</string>
+    <string name="configure_account_info">Configure account info</string>
     <string name="kfc">KFC</string>
     <string name="alipay_code">Alipay Code</string>
     <string name="share">Share NFU Shortcut with friends</string>
@@ -56,4 +56,13 @@
     <string name="go_to_setting">Go to Settings</string>
     <string name="already_know">I already know</string>
     <string name="tips_of_grant_permission">If fail to add, please go to System Settings and grant \"Create Desktop Shortcut\" permission for NFU Shortcut.</string>
+    <string name="call_xiaobao">Call Xiaobai Bus</string>
+    <string name="allow_call_phone_in_setting">You need to allow necessary permissions of make phone calls in Settings manually</string>
+    <string name="explain_why_phone_call_permission">\"Call Xiaobai Bus\" requires you to grant us these permissions</string>
+    <string name="switch_layout">Switch layout</string>
+    <string name="uncle">Uncle</string>
+    <string name="aunt">Aunt</string>
+    <string name="brother">Brother</string>
+    <string name="phone_num_copied">The phone number has been copied to the clipboard</string>
+    <string name="please_choose_driver">Please choose a driver</string>
 </resources>

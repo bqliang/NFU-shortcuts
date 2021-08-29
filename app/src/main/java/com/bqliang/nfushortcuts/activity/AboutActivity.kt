@@ -78,6 +78,9 @@ class AboutActivity : AbsAboutActivity() {
 
             add(License("Lottie Android", "Airbnb",
                 License.APACHE_2,"https://github.com/airbnb/lottie-android"))
+
+            add(License("PermissionX", "GuoLin",
+                License.APACHE_2,"https://github.com/guolindev/PermissionX"))
         }
 
     }

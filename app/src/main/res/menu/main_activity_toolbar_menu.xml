@@ -5,6 +5,12 @@
     <item
         app:showAsAction="always"
         android:visible="true"
+        android:id="@+id/menu_switch_layout"
+        android:title="@string/switch_layout" />
+
+    <item
+        app:showAsAction="ifRoom"
+        android:visible="true"
         android:id="@+id/menu_share"
         android:title="@string/share"
         android:icon="@drawable/ic_share"/>
@@ -12,7 +18,7 @@
     <item
         android:visible="true"
         android:id="@+id/menu_feedback"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:title="@string/feedback"
         android:icon="@drawable/ic_feedback"/>
 
@@ -21,7 +27,7 @@
         android:id="@+id/menu_setting"
         app:showAsAction="always"
         android:title="@string/configure_account_info"
-        android:icon="@drawable/settings"/>
+        android:icon="@drawable/ic_account_setting"/>
 
     <item
         android:visible="true"

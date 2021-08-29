@@ -88,6 +88,6 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         app:fabSize="normal"
-        app:srcCompat="@drawable/ic_settings"
+        app:srcCompat="@drawable/ic_account_setting"
         tools:ignore="RtlHardcoded,SpeakableTextPresentCheck" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable-v24/ic_account_setting.xml" value="0.18769230769230769" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/bottom_sheet_dialog_shape.xml" value="0.1953125" />
+        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/ic_account_setting.xml" value="0.18769230769230769" />
+        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/ic_grid_view.xml" value="0.1" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/ic_home.xml" value="0.190625" />
+        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/ic_list_view.xml" value="0.1" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/ic_round_about_24.xml" value="0.1" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/ic_round_settings.xml" value="0.178125" />
+        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/ic_settings.xml" value="0.18769230769230769" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/ic_share.xml" value="0.1953125" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/recyclerview_item_selector.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/drawable/settings.xml" value="0.1" />
@@ -21,6 +26,8 @@
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/bottom_sheet_dialog_fragment.xml" value="0.36022253129346316" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/bottom_sheet_dialog_layout.xml" value="0.34074074074074073" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/do_not_remind_again_layout.xml" value="0.24011713030746706" />
+        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/driver_item_layout.xml" value="0.8800000000000001" />
+        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/drivers_layout.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/footer_view_layout.xml" value="0.1" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/header_view_layout.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/id_pw_setting.xml" value="0.22" />
@@ -35,7 +42,7 @@
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/layout/test2.xml" value="0.11458333333333333" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/menu/about_page_menu.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/menu/library_card_menu.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/menu/main_activity_toolbar_menu.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/menu/main_activity_toolbar_menu.xml" value="0.264" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/menu/mainactivity_toolbar_menu.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/menu/options_menu.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/bqliang/AndroidStudioProjects/NFUshortcuts/app/src/main/res/menu/recyclerview_menu.xml" value="0.17447916666666666" />

@@ -28,4 +28,12 @@ object SharedPreferencesUtil {
             .putBoolean(key, value)
             .commit()
     }
+
+    fun getInt(key: String, defValue: Int) = sp.getInt(key, defValue)
+
+    fun saveInt(key: String, value: Int){
+        sp.edit()
+            .putInt(key, value)
+            .commit()
+    }
 }

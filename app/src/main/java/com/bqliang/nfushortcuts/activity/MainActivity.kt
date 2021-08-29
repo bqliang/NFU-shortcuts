@@ -3,7 +3,10 @@ package com.bqliang.nfushortcuts.activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bqliang.nfushortcuts.R
@@ -11,6 +14,7 @@ import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
 import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.tools.ClipboardUtil
+import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
 import com.bqliang.nfushortcuts.view.MyItemDecoration
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -22,7 +26,12 @@ import com.microsoft.appcenter.crashes.Crashes
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var bottomSheetDialog : BottomSheetDialog
+    lateinit var bottomSheetDialog: BottomSheetDialog
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var menuItem: MenuItem
+    private var spanCount = MutableLiveData<Int>()
+    private val decorationOfLinearLayout : MyItemDecoration by lazy { MyItemDecoration(1) }
+    private val decorationOfGridLayout : MyItemDecoration by lazy { MyItemDecoration(2) }
 
     companion object {
         val itemList = ArrayList<ShortcutItem>().apply {
@@ -35,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             add(ShortcutItem(R.string.kfc, R.mipmap.item_kfc))
             add(ShortcutItem(R.string.alipay_code, R.mipmap.item_alipay_code))
             add(ShortcutItem(R.string.health_code, R.mipmap.item_health_code))
+            add(ShortcutItem(R.string.call_xiaobao, R.mipmap.item_call_xiaobai))
         }
     }
 
@@ -49,16 +59,21 @@ class MainActivity : AppCompatActivity() {
         bottomSheetDialog = BottomSheetDialog(this, R.style.Theme_MyBottomSheetDialog).apply {
             setContentView(R.layout.bottom_sheet_dialog_layout)
 
-            findViewById<RecyclerView>(R.id.my_recyclerview)?.apply {
-                layoutManager = GridLayoutManager(this@MainActivity, 2)
-                adapter = MyRecyclerViewAdapter(itemList, this@MainActivity)
-                addItemDecoration(MyItemDecoration(25, 40))
+            recyclerView = findViewById(R.id.my_recyclerview)!!
+            recyclerView.adapter = MyRecyclerViewAdapter(itemList, this@MainActivity)
+            menuItem = findViewById<MaterialToolbar>(R.id.toolbar)?.menu?.findItem(R.id.menu_switch_layout)!!
+            spanCount.observe(this@MainActivity){
+                setRecyclerView()
+                setMenuIcon()
+                SharedPreferencesUtil.saveInt("span_count", it)
             }
+            spanCount.value = SharedPreferencesUtil.getInt("span_count", 2)
 
             show()
 
             findViewById<MaterialToolbar>(R.id.toolbar)?.setOnMenuItemClickListener { menuItem ->
                 when(menuItem.itemId){
+                    R.id.menu_switch_layout -> { spanCount.value = if (spanCount.value == 1) 2 else 1 }
                     R.id.menu_about -> startActivity(Intent(this@MainActivity, AboutActivity::class.java))
                     R.id.menu_setting -> CaptivePortalSettingAlertDialog(this@MainActivity)
                     R.id.menu_feedback -> startActivity(Intent(this@MainActivity, FeedbackActivity::class.java))
@@ -82,5 +97,24 @@ class MainActivity : AppCompatActivity() {
 
             setOnCancelListener { this@MainActivity.finish() }
         }
+    }
+
+    private fun setRecyclerView(){
+        recyclerView.apply {
+            layoutManager = GridLayoutManager(this@MainActivity, spanCount.value!!)
+            if (spanCount.value == 1) {
+                removeItemDecoration(decorationOfGridLayout)
+                addItemDecoration(decorationOfLinearLayout)
+            }
+            else{
+                removeItemDecoration(decorationOfLinearLayout)
+                addItemDecoration(decorationOfGridLayout)
+            }
+        }
+    }
+
+    private fun setMenuIcon(){
+        val iconResId = if (spanCount.value == 1) R.drawable.ic_grid_view else R.drawable.ic_list_view
+        menuItem.icon = ContextCompat.getDrawable(this, iconResId)
     }
 }

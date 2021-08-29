@@ -1,18 +1,13 @@
 package com.bqliang.nfushortcuts.view
 
 import android.graphics.Rect
-import android.util.Log
 import android.view.View
-import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 
-class MyItemDecoration(
-    @NonNull private val rowSpacing: Int,
-    @NonNull private val columnSpacing: Int
-    )
-    : RecyclerView.ItemDecoration() {
+class MyItemDecoration(private val spanCount: Int) : RecyclerView.ItemDecoration() {
 
-    private val spanCount = 2
+    private val rowSpacing = 25
+    private val columnSpacing = 40
 
     override fun getItemOffsets(
         outRect: Rect,

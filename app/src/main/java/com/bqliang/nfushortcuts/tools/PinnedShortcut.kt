@@ -48,6 +48,10 @@ fun createPinnedShortcut(shortcut:Shortcut, activity: MainActivity){
             labelResId = R.string.health_code
             iconResourceId = R.mipmap.item_health_code
         }
+        Shortcut.CALL_XIAOBAI -> {
+            labelResId = R.string.call_xiaobao
+            iconResourceId = R.mipmap.item_call_xiaobai
+        }
     }
 
 

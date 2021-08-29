@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/recyclerview_menu_configure_account_info"
-        android:icon="@drawable/settings"
+        android:icon="@drawable/ic_account_setting"
         android:title="@string/configure_account_info"
         android:visible="false"/>
 
