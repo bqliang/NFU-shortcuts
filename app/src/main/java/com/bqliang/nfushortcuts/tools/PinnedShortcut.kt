@@ -52,6 +52,10 @@ fun createPinnedShortcut(shortcut:Shortcut, activity: MainActivity){
             labelResId = R.string.call_xiaobao
             iconResourceId = R.mipmap.item_call_xiaobai
         }
+        Shortcut.CAINIAO_GUOGUO -> {
+            labelResId = R.string.cainiao_guoguo
+            iconResourceId = R.mipmap.item_cainiao_guoguo
+        }
     }
 
 

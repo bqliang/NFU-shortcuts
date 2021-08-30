@@ -10,5 +10,6 @@ enum class Shortcut {
     KFC,
     ALIPAY_CODE,
     HEALTH_CODE,
-    CALL_XIAOBAI
+    CALL_XIAOBAI,
+    CAINIAO_GUOGUO
 }

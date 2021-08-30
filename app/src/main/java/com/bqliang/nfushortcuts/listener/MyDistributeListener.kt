@@ -21,12 +21,12 @@ class MyDistributeListener : DistributeListener {
             .setMessage(
                 activity.getString(R.string.new_version) + versionName + "\n"
             + activity.getString(R.string.size) + size + "\n"
-            + activity.getString(R.string.what_is_new) + releaseNotes
+            + activity.getString(R.string.what_is_new) + "\n" + releaseNotes
             )
-            .setPositiveButton(R.string.download){ dialog, which ->
+            .setPositiveButton(R.string.download){ _, _ ->
                 Distribute.notifyUpdateAction(UpdateAction.UPDATE)
             }
-            .setNegativeButton(R.string.ask_me_in_a_day){ dialog, which ->
+            .setNegativeButton(R.string.ask_me_in_a_day){ _, _ ->
                 Distribute.notifyUpdateAction(UpdateAction.POSTPONE)
             }
             .setCancelable(true)

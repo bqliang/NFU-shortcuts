@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             add(ShortcutItem(R.string.alipay_code, R.mipmap.item_alipay_code))
             add(ShortcutItem(R.string.health_code, R.mipmap.item_health_code))
             add(ShortcutItem(R.string.call_xiaobao, R.mipmap.item_call_xiaobai))
+            add(ShortcutItem(R.string.cainiao_guoguo, R.mipmap.item_cainiao_guoguo))
         }
     }
 
