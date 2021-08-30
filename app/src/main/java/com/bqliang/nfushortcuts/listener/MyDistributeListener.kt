@@ -20,7 +20,7 @@ class MyDistributeListener : DistributeListener {
             .setTitle(R.string.update_available)
             .setMessage(
                 activity.getString(R.string.new_version) + versionName + "\n"
-            + activity.getString(R.string.size) + size + "\n"
+            + activity.getString(R.string.size) + size + "M\n"
             + activity.getString(R.string.what_is_new) + "\n" + releaseNotes
             )
             .setPositiveButton(R.string.download){ _, _ ->
