@@ -16,6 +16,7 @@
         <package android:name="com.eg.android.AlipayGphone" />
         <package android:name="com.tencent.mm" />
         <package android:name="com.unionpay" />
+        <package android:name="com.taobao.taobao" />
     </queries>
 
     <application
