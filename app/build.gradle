@@ -3,15 +3,15 @@ plugins {
     id 'kotlin-android'
 }
 
-static def gitCommitCount() {
+def MyCommitCount() {
     def cmd = 'git rev-list HEAD --count'
     return cmd.execute().text.trim().toInteger()
 }
 
-static def getMyVersionName(){
+def MyVersionName() {
     def tag = 'git describe --abbrev=0'.execute().text.trim()
     def commitId = 'git rev-parse --short HEAD'.execute().text.trim()
-    return "${tag}_r${gitCommitCount()}.${commitId}"
+    return "${tag}_r${MyCommitCount()}.${commitId}"
 }
 
 
@@ -26,8 +26,8 @@ android {
         applicationId "com.bqliang.nfushortcuts"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode gitCommitCount()
-        versionName getMyVersionName()
+        versionCode MyCommitCount()
+        versionName MyVersionName()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,6 +37,12 @@ android {
             shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [app_name:"@string/app_name_release"]
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            manifestPlaceholders = [app_name:"@string/app_name_debug"]
         }
     }
     compileOptions {

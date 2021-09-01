@@ -73,4 +73,6 @@
     <string name="size">"Size: "</string>
     <string name="what_is_new">"What's new: "</string>
     <string name="cainiao_guoguo">Cainiao Guoguo</string>
+    <string name="app_name_release">NFU Shortcuts</string>
+    <string name="app_name_debug">NFU Shortcuts Debug</string>
 </resources>
