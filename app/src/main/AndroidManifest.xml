@@ -18,6 +18,7 @@
         <package android:name="com.unionpay" />
         <package android:name="com.taobao.taobao" />
         <package android:name="com.cainiao.wireless" />
+        <package android:name="com.yek.android.kfc.activitys"/>
     </queries>
 
     <application
@@ -30,52 +31,66 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Transparent"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".activity.temp.CaiNiaoActivity"
-            android:excludeFromRecents="true"
+        <activity
+            android:name=".activity.temp.KFCActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="@string/scheme"/>
-                <data android:host="cainiao"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="@string/scheme" />
+                <data android:host="kfc" />
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".activity.temp.CaiNiaoActivity"
+            android:excludeFromRecents="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="@string/scheme" />
+                <data android:host="cainiao" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.CallXiaobaiActivity"
             android:excludeFromRecents="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="@string/scheme"/>
-                <data android:host="call_xiaobai"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="@string/scheme" />
+                <data android:host="call_xiaobai" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.AboutActivity"
             android:exported="true"
             android:theme="@style/AppTheme.About" />
-
         <activity
             android:name=".activity.FeedbackActivity"
             android:exported="true"
             android:theme="@style/Theme.Feedback" />
-
         <activity
             android:name=".activity.LibraryCardActivity"
             android:exported="true"
             android:theme="@style/Theme.LibraryCard">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="@string/scheme"/>
-                <data android:host="library_card"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="@string/scheme" />
+                <data android:host="library_card" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.MainActivity"
             android:excludeFromRecents="true"
@@ -90,26 +105,28 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
-
         <activity
             android:name=".activity.temp.CaptivePortalLoginActivity"
             android:excludeFromRecents="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="@string/scheme"/>
-                <data android:host="captive_portal_login"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="@string/scheme" />
+                <data android:host="captive_portal_login" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.temp.HealthCodeActivity"
             android:excludeFromRecents="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="@string/scheme"/>
-                <data android:host="health_code"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="@string/scheme" />
+                <data android:host="health_code" />
             </intent-filter>
         </activity>
 

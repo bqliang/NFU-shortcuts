@@ -79,4 +79,7 @@
     <string name="install_taobao_or_cainiao_first">抱歉，您必须先安装淘宝或菜鸟APP</string>
     <string name="do_not_need">我不需要</string>
     <string name="scheme" translatable="false">nfushortcuts</string>
+    <string name="download_kfc">下载KFC</string>
+    <string name="download_alipay">下载支付宝</string>
+    <string name="temp_kfc_dialog_msg">抱歉，您必须事先下载肯德基或支付宝APP</string>
 </resources>

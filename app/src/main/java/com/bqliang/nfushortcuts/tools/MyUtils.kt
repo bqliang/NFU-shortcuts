@@ -27,7 +27,7 @@ fun getIntent(shortcut: Shortcut) :Intent {
         Shortcut.QUICK_SCAN_QRCODE -> "alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
         Shortcut.CAPTIVE_PORTAL_LOGIN -> "nfushortcuts://captive_portal_login"
         Shortcut.FEED_DEVELOPER -> "alipays://platformapi/startapp?appId=20000067&url=https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
-        Shortcut.KFC -> "alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex&enbsv=0.2.2108231924.16&chInfo=ch_share__chsub_CopyLink"
+        Shortcut.KFC -> "nfushortcuts://kfc"
         Shortcut.ALIPAY_CODE -> "alipayqr://platformapi/startapp?appId=20000056"
         Shortcut.HEALTH_CODE -> "nfushortcuts://health_code"
         Shortcut.CALL_XIAOBAI -> "nfushortcuts://call_xiaobai"

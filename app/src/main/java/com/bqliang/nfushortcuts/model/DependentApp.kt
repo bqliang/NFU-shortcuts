@@ -6,4 +6,5 @@ object DependentApp {
     const val UNIONPAY = "com.unionpay"
     const val TAOBAO = "com.taobao.taobao"
     const val CAINIAO = "com.cainiao.wireless"
+    const val KFC = "com.yek.android.kfc.activitys"
 }

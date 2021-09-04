@@ -79,4 +79,7 @@
     <string name="download_cainiao">Download Cainiao</string>
     <string name="install_taobao_or_cainiao_first">Sorry, you must first install Taobao or CaiNiao APP</string>
     <string name="do_not_need">I don\'t need</string>
+    <string name="download_kfc">Download KFC</string>
+    <string name="download_alipay">Download AliPay</string>
+    <string name="temp_kfc_dialog_msg">Sorry, you must first download the APP of KFC or Alipay</string>
 </resources>

@@ -27,7 +27,7 @@ android {
         minSdkVersion 26
         targetSdkVersion 30
         versionCode myCommitCount()
-
+        versionName myVersionName()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -36,13 +36,11 @@ android {
             shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            defaultConfig.versionName "release_" + myVersionName()
             manifestPlaceholders = [app_name:"@string/app_name_release"]
         }
 
         debug {
             applicationIdSuffix ".debug"
-            defaultConfig.versionName "debug_" + myVersionName()
             manifestPlaceholders = [app_name:"@string/app_name_debug"]
         }
     }
