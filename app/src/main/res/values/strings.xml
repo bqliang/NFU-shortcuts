@@ -74,4 +74,8 @@
     <string name="cainiao_guoguo">菜鸟裹裹</string>
     <string name="app_name_release">NFU捷径</string>
     <string name="app_name_debug">NFU捷径 Debug</string>
+    <string name="download_taobao">下载淘宝</string>
+    <string name="download_cainiao">下载菜鸟</string>
+    <string name="install_taobao_or_cainiao_first">抱歉，您必须先安装淘宝或菜鸟APP</string>
+    <string name="do_not_need">我不需要</string>
 </resources>

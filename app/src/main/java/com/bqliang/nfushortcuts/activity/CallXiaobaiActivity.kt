@@ -1,17 +1,13 @@
 package com.bqliang.nfushortcuts.activity
 
 import android.Manifest
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyListAdapter
 import com.bqliang.nfushortcuts.model.Driver
-import com.bqliang.nfushortcuts.model.ShortcutItem
-import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.permissionx.guolindev.PermissionX
 

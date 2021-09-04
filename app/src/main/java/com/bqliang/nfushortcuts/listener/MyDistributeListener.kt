@@ -1,7 +1,6 @@
 package com.bqliang.nfushortcuts.listener
 
 import android.app.Activity
-import android.util.Log
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

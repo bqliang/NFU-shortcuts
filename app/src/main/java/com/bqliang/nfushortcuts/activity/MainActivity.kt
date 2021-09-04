@@ -9,10 +9,10 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bqliang.nfushortcuts.listener.MyDistributeListener
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
+import com.bqliang.nfushortcuts.listener.MyDistributeListener
 import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.tools.ClipboardUtil
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
@@ -29,6 +29,7 @@ import com.microsoft.appcenter.distribute.Distribute
 class MainActivity : AppCompatActivity() {
 
     lateinit var bottomSheetDialog: BottomSheetDialog
+    lateinit var toolbar: MaterialToolbar
     private lateinit var recyclerView: RecyclerView
     private lateinit var menuItem: MenuItem
     private var spanCount = MutableLiveData<Int>()
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         Distribute.disableAutomaticCheckForUpdate()
         Distribute.setEnabledForDebuggableBuild(true)
         Distribute.setListener(MyDistributeListener())
@@ -66,7 +68,8 @@ class MainActivity : AppCompatActivity() {
 
             recyclerView = findViewById(R.id.my_recyclerview)!!
             recyclerView.adapter = MyRecyclerViewAdapter(itemList, this@MainActivity)
-            menuItem = findViewById<MaterialToolbar>(R.id.toolbar)?.menu?.findItem(R.id.menu_switch_layout)!!
+            toolbar = findViewById(R.id.toolbar)!!
+            menuItem = toolbar.menu?.findItem(R.id.menu_switch_layout)!!
             spanCount.observe(this@MainActivity){
                 setRecyclerView()
                 setMenuIcon()
@@ -76,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
             show()
 
-            findViewById<MaterialToolbar>(R.id.toolbar)?.setOnMenuItemClickListener { menuItem ->
+            toolbar.setOnMenuItemClickListener { menuItem ->
                 when(menuItem.itemId){
                     R.id.menu_switch_layout -> { spanCount.value = if (spanCount.value == 1) 2 else 1 }
                     R.id.menu_about -> startActivity(Intent(this@MainActivity, AboutActivity::class.java))

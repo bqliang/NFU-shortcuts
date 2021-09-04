@@ -1,4 +1,4 @@
-package com.bqliang.nfushortcuts.activity
+package com.bqliang.nfushortcuts.activity.temp
 
 import android.content.Intent
 import android.net.wifi.WifiManager
@@ -9,7 +9,7 @@ import com.bqliang.nfushortcuts.service.MyService
 import com.bqliang.nfushortcuts.tools.showToast
 import com.microsoft.appcenter.analytics.Analytics
 
-class TempCaptivePortalLoginActivity : AppCompatActivity() {
+class CaptivePortalLoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val wifiManager = getSystemService(WIFI_SERVICE) as WifiManager

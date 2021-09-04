@@ -1,3 +1,7 @@
+# build file by AS
+/app/release
+/app/debug
+
 # Built application files
 *.apk
 *.aar

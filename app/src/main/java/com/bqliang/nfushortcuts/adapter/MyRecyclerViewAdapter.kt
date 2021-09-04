@@ -8,11 +8,11 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.activity.MainActivity
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
 import com.bqliang.nfushortcuts.model.Shortcut
+import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.tools.*
 import com.bumptech.glide.Glide
 import com.google.android.material.card.MaterialCardView
@@ -30,13 +30,13 @@ class MyRecyclerViewAdapter(private val data:List<ShortcutItem>, val activity: M
 
         init {
             materialCard.setOnClickListener {
-                activity.startActivity(getIntent(Shortcut.values()[absoluteAdapterPosition]))
+                activity.startActivity(getIntent(Shortcut.values()[adapterPosition]))
                 activity.bottomSheetDialog.dismiss()
                 activity.finish()
             }
 
             materialCard.setOnLongClickListener { view ->
-                val selectItem = Shortcut.values()[absoluteAdapterPosition]
+                val selectItem = Shortcut.values()[adapterPosition]
                 if (selectItem == Shortcut.FEED_DEVELOPER){
                     "I am so hungry!".showToast()
                     return@setOnLongClickListener true

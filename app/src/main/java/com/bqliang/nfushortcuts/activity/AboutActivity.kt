@@ -6,20 +6,18 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.bqliang.nfushortcuts.BuildConfig
 import com.bqliang.nfushortcuts.R
+import com.bqliang.nfushortcuts.tools.ClipboardUtil
 import com.bqliang.nfushortcuts.tools.showToast
 import com.bumptech.glide.Glide
-import com.drakeet.about.*
-import com.microsoft.appcenter.AppCenter
-import com.microsoft.appcenter.Flags
-import com.microsoft.appcenter.analytics.Analytics
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
-import com.bqliang.nfushortcuts.tools.ClipboardUtil
+import com.drakeet.about.AbsAboutActivity
+import com.drakeet.about.Category
+import com.drakeet.about.Contributor
+import com.drakeet.about.License
 import com.google.android.material.snackbar.Snackbar
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
 
 
 class AboutActivity : AbsAboutActivity() {

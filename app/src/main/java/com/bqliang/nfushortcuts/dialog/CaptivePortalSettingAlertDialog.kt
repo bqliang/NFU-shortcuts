@@ -4,12 +4,9 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.widget.TextView
 import com.bqliang.nfushortcuts.R
-import com.bqliang.nfushortcuts.tools.MyApplication
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
-import com.bqliang.nfushortcuts.tools.TimeUtil
 import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.microsoft.appcenter.Flags
 import com.microsoft.appcenter.analytics.Analytics
 
 class CaptivePortalSettingAlertDialog(activity: Activity) {

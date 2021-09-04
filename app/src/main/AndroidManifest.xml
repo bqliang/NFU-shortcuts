@@ -17,6 +17,7 @@
         <package android:name="com.tencent.mm" />
         <package android:name="com.unionpay" />
         <package android:name="com.taobao.taobao" />
+        <package android:name="com.cainiao.wireless" />
     </queries>
 
     <application
@@ -29,6 +30,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Transparent"
         android:usesCleartextTraffic="true">
+
+        <activity android:name=".activity.temp.CaiNiaoActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"/>
+
         <activity
             android:name=".activity.CallXiaobaiActivity"
             android:excludeFromRecents="true"
@@ -60,10 +66,10 @@
                 android:resource="@xml/shortcuts" />
         </activity>
         <activity
-            android:name=".activity.TempCaptivePortalLoginActivity"
+            android:name=".activity.temp.CaptivePortalLoginActivity"
             android:excludeFromRecents="true" />
         <activity
-            android:name=".activity.TempHealthCodeActivity"
+            android:name=".activity.temp.HealthCodeActivity"
             android:excludeFromRecents="true" />
 
         <service

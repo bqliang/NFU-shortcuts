@@ -11,5 +11,5 @@ enum class Shortcut {
     ALIPAY_CODE,
     HEALTH_CODE,
     CALL_XIAOBAI,
-    CAINIAO_GUOGUO
+    CAINIAO
 }

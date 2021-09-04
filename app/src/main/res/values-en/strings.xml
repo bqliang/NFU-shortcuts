@@ -75,4 +75,8 @@
     <string name="cainiao_guoguo">Cainiao Guoguo</string>
     <string name="app_name_release">NFU Shortcuts</string>
     <string name="app_name_debug">NFU Shortcuts Debug</string>
+    <string name="download_taobao">Download Taobao</string>
+    <string name="download_cainiao">Download Cainiao</string>
+    <string name="install_taobao_or_cainiao_first">Sorry, you must first install Taobao or CaiNiao APP</string>
+    <string name="do_not_need">I don\'t need</string>
 </resources>
