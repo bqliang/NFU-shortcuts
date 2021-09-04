@@ -78,4 +78,5 @@
     <string name="download_cainiao">下载菜鸟</string>
     <string name="install_taobao_or_cainiao_first">抱歉，您必须先安装淘宝或菜鸟APP</string>
     <string name="do_not_need">我不需要</string>
+    <string name="scheme" translatable="false">nfushortcuts</string>
 </resources>

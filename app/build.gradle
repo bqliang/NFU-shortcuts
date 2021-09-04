@@ -27,7 +27,6 @@ android {
         minSdkVersion 26
         targetSdkVersion 30
         versionCode myCommitCount()
-        versionName myVersionName()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -59,7 +58,7 @@ android {
         def appName = "NFU Shortcut"
         def buildTime = LocalDateTime.now().toString().dropRight(10).replace("-", "").replace(":", "")
         variant.outputs.all { output ->
-            outputFileName = "${appName}-${variant.buildType.name}-${versionName}-${buildTime}.apk"
+            outputFileName = "${appName}-${variant.buildType.name}-${myVersionName()}-${buildTime}.apk"
         }
     }
 }

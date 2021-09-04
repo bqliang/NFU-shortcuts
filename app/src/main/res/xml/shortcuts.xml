@@ -6,10 +6,7 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.bqliang.nfushortcuts"
-            android:targetClass="com.bqliang.nfushortcuts.activity.TempActivity"/>
-        <!-- 虽然 Class TempActivity 处在 com.bqliang.nfushortcuts.activity，
-            但 targetPackage 只需具体到 com.bqliang.nfushortcuts，否则无法启动 -->
+            android:data="nfushortcuts://captive_portal_login"/>
     </shortcut>
 
     <shortcut
@@ -39,7 +36,6 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.bqliang.nfushortcuts"
-            android:targetClass="com.bqliang.nfushortcuts.activity.TempHealthCodeActivity"/>
+            android:data="nfushortcuts://health_code"/>
     </shortcut>
 </shortcuts>

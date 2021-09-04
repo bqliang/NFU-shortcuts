@@ -20,23 +20,25 @@ import java.net.URL
 
 fun getIntent(shortcut: Shortcut) :Intent {
 
-    val intent = Intent().setAction(Intent.ACTION_VIEW)
-
-    when(shortcut){
-        Shortcut.LIBRARY_CARD -> { return intent.setClass(MyApplication.context, LibraryCardActivity::class.java) }
-        Shortcut.CAMPUS_BUS -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink")
-        Shortcut.ACCESS_CODE -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink")
-        Shortcut.QUICK_SCAN_QRCODE -> { intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink") }
-        Shortcut.CAPTIVE_PORTAL_LOGIN -> { intent.setClass(MyApplication.context, CaptivePortalLoginActivity::class.java) }
-        Shortcut.FEED_DEVELOPER -> { intent.data = Uri.parse("alipays://platformapi/startapp?appId=20000067&url=https://qr.alipay.com/fkx18192oyczl2lnexuxud1") }
-        Shortcut.KFC -> intent.data = Uri.parse("alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex&enbsv=0.2.2108231924.16&chInfo=ch_share__chsub_CopyLink")
-        Shortcut.ALIPAY_CODE -> intent.data = Uri.parse("alipayqr://platformapi/startapp?appId=20000056")
-        Shortcut.HEALTH_CODE -> { return intent.setClass(MyApplication.context, HealthCodeActivity::class.java) }
-        Shortcut.CALL_XIAOBAI -> { return intent.setClass(MyApplication.context, CallXiaobaiActivity::class.java) }
-        Shortcut.CAINIAO -> { return intent.setClass(MyApplication.context, CaiNiaoActivity::class.java) }
+    val uriStr = when(shortcut){
+        Shortcut.LIBRARY_CARD -> "nfushortcuts://library_card"
+        Shortcut.CAMPUS_BUS -> "alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/campusbus_index/ticket/index.html?chInfo=ch_share__chsub_CopyLink"
+        Shortcut.ACCESS_CODE -> "alipays://platformapi/startapp?appId=2021002142606387&page=pages%2Findex%2Findex&enbsv=0.2.2105171134.36&chInfo=ch_share__chsub_CopyLink"
+        Shortcut.QUICK_SCAN_QRCODE -> "alipays://platformapi/startapp?appId=20000067&url=http://nfuedu.zftcloud.com/index/travel_record/scanCode/path/1?chInfo=ch_share__chsub_CopyLink"
+        Shortcut.CAPTIVE_PORTAL_LOGIN -> "nfushortcuts://captive_portal_login"
+        Shortcut.FEED_DEVELOPER -> "alipays://platformapi/startapp?appId=20000067&url=https://qr.alipay.com/fkx18192oyczl2lnexuxud1"
+        Shortcut.KFC -> "alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex&enbsv=0.2.2108231924.16&chInfo=ch_share__chsub_CopyLink"
+        Shortcut.ALIPAY_CODE -> "alipayqr://platformapi/startapp?appId=20000056"
+        Shortcut.HEALTH_CODE -> "nfushortcuts://health_code"
+        Shortcut.CALL_XIAOBAI -> "nfushortcuts://call_xiaobai"
+        Shortcut.CAINIAO -> "nfushortcuts://cainiao"
     }
-    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    return intent
+
+    return Intent().apply {
+        action = Intent.ACTION_VIEW
+        data = Uri.parse(uriStr)
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    }
 }
 
 fun loginWIFI(userId:String, password:String){
