@@ -28,6 +28,7 @@ android {
         targetSdkVersion 30
         versionCode myCommitCount()
         versionName myVersionName()
+        buildConfigField("String", "CAIYUN_TOKEN", "\"${System.env.CAIYUN_TOKEN}\"")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -62,6 +63,11 @@ android {
 }
 
 dependencies {
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.8.8'
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation 'com.guolindev.permissionx:permissionx:1.5.1'
     implementation "com.microsoft.appcenter:appcenter-distribute:4.2.0"

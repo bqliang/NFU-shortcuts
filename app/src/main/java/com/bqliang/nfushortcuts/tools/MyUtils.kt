@@ -4,11 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import com.bqliang.nfushortcuts.R
-import com.bqliang.nfushortcuts.activity.CallXiaobaiActivity
-import com.bqliang.nfushortcuts.activity.LibraryCardActivity
-import com.bqliang.nfushortcuts.activity.temp.CaiNiaoActivity
-import com.bqliang.nfushortcuts.activity.temp.CaptivePortalLoginActivity
-import com.bqliang.nfushortcuts.activity.temp.HealthCodeActivity
 import com.bqliang.nfushortcuts.model.Shortcut
 import java.io.BufferedReader
 import java.io.DataOutputStream

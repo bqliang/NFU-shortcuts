@@ -1,85 +1,112 @@
 <resources>
+    <!-- APP Name -->
     <string name="app_name">NFU捷径</string>
+    <string name="app_name_release">NFU捷径</string>
+    <string name="app_name_debug">NFU捷径 Debug</string>
+    <string name="scheme" translatable="false">nfushortcuts</string>
+
+    <!-- item -->
+    <string name="tile_captive_portal_login">校园网登录</string>
     <string name="feed_developer">投喂开发者</string>
     <string name="no_scan_pass">不扫码通行</string>
     <string name="campus_bus">校园巴士</string>
     <string name="library_card">电子借阅卡</string>
     <string name="access_code">门禁码</string>
     <string name="captive_portal_login">校园网登录</string>
+    <string name="health_code">粤康码</string>
+    <string name="call_xiaobao">呼叫小白</string>
+    <string name="kfc">KFC点餐</string>
+    <string name="alipay_code">付款码</string>
+    <string name="cainiao_guoguo">菜鸟裹裹</string>
 
+    <!-- Toast Message -->
+    <string name="wifi_not_enable">WiFi未打开，无法为您登录校园网</string>
     <string name="login_successfully">登陆成功！</string>
     <string name="login_unsuccessfully">登录失败！</string>
     <string name="login_timeout">连接超时，请确保连接的WiFi为“NFU_Student”</string>
-
-    <string name="notification_channel_foreground_service">前台服务通知</string>
-
-    <string name="please_enter_id_pwd">请输入您的学号与密码</string>
-    <string name="student_id">学号</string>
-    <string name="password">密码</string>
-    <string name="hint_password">信息门户密码（非WiFi密码）</string>
-    <string name="cancel">取消</string>
-    <string name="save">保存</string>
-    <string name="save_successfully">保存成功</string>
-
     <string name="error_id_or_pw">账号或密码为空，请点击齿轮图标\u2699配置信息后再重试</string>
     <string name="login_unavailable">您的设备似乎未成功连接到WIFI，无法登录</string>
-
-    <string name="tile_captive_portal_login">校园网登录</string>
+    <string name="save_successfully">保存成功</string>
     <string name="error_create_pinned_shortcut">您的设备暂未支持创建固定快捷方式</string>
-    <string name="tooltip_create_pinned_shortcut">已尝试为您创建桌面快捷方式</string>
-    <string name="configure_id">配置您的学号信息</string>
     <string name="tooltip_configure_id">请先点击齿轮按钮设置您的学号信息</string>
-    <string name="feedback">意见反馈</string>
-    <string name="ok">好的</string>
-    <string name="wifi_not_enable">WiFi未打开，无法为您登录校园网</string>
-    <string name="developer">开发者</string>
-    <string name="open_source_licenses">开源许可证</string>
-    <string name="developer_introduction">开发 &amp; 设计</string>
-    <string name="about">关于</string>
-    <string name="setting">设置</string>
-    <string name="thanks_for_encouragement">非常感谢您的鼓励！</string>
-    <string name="special_thanks">特别感谢 (｡・ω・｡)</string>
-    <string name="my_girlfriend_introduction">因为她的鼓励和支持，才让我有动力不断更新打磨这个（烂）APP</string>
-    <string name="name_of_girlfriend">Lis（俺对象）</string>
-    <string name="create_pinned_shortcut">创建桌面快捷方式</string>
-    <string name="configure_account_info">配置校园网账号信息</string>
-    <string name="kfc">KFC点餐</string>
-    <string name="alipay_code">付款码</string>
-    <string name="share">与好友分享NFU捷径</string>
-    <string name="share_dialog_message">下载链接已复制到剪贴板，是否立刻打开微信分享给好友？</string>
-    <string name="health_code">粤康码</string>
-    <string name="no">不</string>
+    <string name="no_update_available">已经是最新版本</string>
+    <string name="phone_num_copied">电话号码已复制到剪贴板</string>
+
+    <!-- Notification & Dialog -->
+    <string name="temp_kfc_dialog_msg">抱歉，您必须事先下载肯德基或支付宝APP</string>
+    <string name="configure_id">配置您的学号信息</string>
     <string name="download_unionpay_dialog_message">由于NFU捷径打开的粤康码为云闪付小程序（而非微信小程序），所以您必须先安装云闪付APP，是否跳转应用市场下载？</string>
     <string name="not_yet_install_unionpay">您尚未安装云闪付</string>
     <string name="do_not_remind_again">不再提醒</string>
     <string name="go_to_setting">前往设置</string>
     <string name="already_know">我已知晓</string>
     <string name="tips_of_grant_permission">若添加失败，请前往系统设置，为NFU捷径授予“创建桌面快捷方式”权限。</string>
-    <string name="call_xiaobao">呼叫小白</string>
     <string name="allow_call_phone_in_setting">您需要在设置中手动授予拨打电话的必要权限。</string>
     <string name="explain_why_phone_call_permission">“呼叫小白”需要您授予我们以下权限</string>
-    <string name="switch_layout">切换布局</string>
+    <string name="tooltip_create_pinned_shortcut">已尝试为您创建桌面快捷方式</string>
+    <string name="notification_channel_foreground_service">前台服务通知</string>
+    <string name="please_enter_id_pwd">请输入您的学号与密码</string>
+    <string name="student_id">学号</string>
+    <string name="password">密码</string>
+    <string name="hint_password">信息门户密码（非WiFi密码）</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="ok">好的</string>
+    <string name="share">与好友分享NFU捷径</string>
+    <string name="share_dialog_message">下载链接已复制到剪贴板，是否立刻打开微信分享给好友？</string>
+    <string name="no">不</string>
+    <string name="download_kfc">下载KFC</string>
+    <string name="download_alipay">下载支付宝</string>
     <string name="uncle">小白叔叔</string>
     <string name="aunt">小白阿姨</string>
     <string name="brother">小白哥哥</string>
-    <string name="phone_num_copied">电话号码已复制到剪贴板</string>
-    <string name="please_choose_driver">请选择一位司机</string>
-    <string name="no_update_available">已经是最新版本</string>
     <string name="download">下载</string>
     <string name="ask_me_in_a_day">一天内询问我</string>
     <string name="update_available">可用的应用更新</string>
     <string name="new_version">新版本：</string>
     <string name="size">文件大小：</string>
     <string name="what_is_new">新版变化：</string>
-    <string name="cainiao_guoguo">菜鸟裹裹</string>
-    <string name="app_name_release">NFU捷径</string>
-    <string name="app_name_debug">NFU捷径 Debug</string>
     <string name="download_taobao">下载淘宝</string>
     <string name="download_cainiao">下载菜鸟</string>
     <string name="install_taobao_or_cainiao_first">抱歉，您必须先安装淘宝或菜鸟APP</string>
     <string name="do_not_need">我不需要</string>
-    <string name="scheme" translatable="false">nfushortcuts</string>
-    <string name="download_kfc">下载KFC</string>
-    <string name="download_alipay">下载支付宝</string>
-    <string name="temp_kfc_dialog_msg">抱歉，您必须事先下载肯德基或支付宝APP</string>
+    <string name="please_choose_driver">请选择一位司机</string>
+
+    <!-- About Page -->
+    <string name="developer">开发者</string>
+    <string name="open_source_licenses">开源许可证</string>
+    <string name="developer_introduction">开发 &amp; 设计</string>
+    <string name="thanks_for_encouragement">非常感谢您的鼓励！</string>
+    <string name="special_thanks">特别感谢 (｡・ω・｡)</string>
+    <string name="my_girlfriend_introduction">因为她的鼓励和支持，才让我有动力不断更新打磨这个（烂）APP</string>
+    <string name="name_of_girlfriend">Lis（俺对象）</string>
+
+    <!-- Menu -->
+    <string name="switch_layout">切换布局</string>
+    <string name="feedback">意见反馈</string>
+    <string name="about">关于</string>
+    <string name="setting">设置</string>
+    <string name="create_pinned_shortcut">创建桌面快捷方式</string>
+    <string name="configure_account_info">配置校园网账号信息</string>
+
+    <!-- 天气用词 -->
+    <string name="weather_clear">晴</string>
+    <string name="weather_partly_cloudy">多云</string>
+    <string name="weather_cloudy">阴</string>
+    <string name="weather_light_haze">轻度雾霾</string>
+    <string name="weather_moderate_haze">中度雾霾</string>
+    <string name="weather_heavy_haze">重度雾霾</string>
+    <string name="weather_light_rain">小雨</string>
+    <string name="weather_moderate_rain">中雨</string>
+    <string name="weather_heavy_rain">大雨</string>
+    <string name="weather_storm_rain">暴雨</string>
+    <string name="weather_fog">雾</string>
+    <string name="weather_light_snow">小雪</string>
+    <string name="weather_moserate_snow">中雪</string>
+    <string name="weather_heavy_snow">大雪</string>
+    <string name="weather_storm_snow">暴雪</string>
+    <string name="weather_dust">浮尘</string>
+    <string name="weather_sand">沙尘</string>
+    <string name="weather_wind">大风</string>
+    <string name="weather_AQI">空气质量：</string>
 </resources>

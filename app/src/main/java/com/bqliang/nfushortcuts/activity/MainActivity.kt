@@ -7,15 +7,21 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bqliang.nfushortcuts.BuildConfig
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
 import com.bqliang.nfushortcuts.listener.MyDistributeListener
 import com.bqliang.nfushortcuts.model.ShortcutItem
+import com.bqliang.nfushortcuts.model.Weather
+import com.bqliang.nfushortcuts.model.WeatherViewModel
+import com.bqliang.nfushortcuts.model.getSky
 import com.bqliang.nfushortcuts.tools.ClipboardUtil
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
+import com.bqliang.nfushortcuts.tools.showToast
 import com.bqliang.nfushortcuts.view.MyItemDecoration
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -35,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     private var spanCount = MutableLiveData<Int>()
     private val decorationOfLinearLayout : MyItemDecoration by lazy { MyItemDecoration(1) }
     private val decorationOfGridLayout : MyItemDecoration by lazy { MyItemDecoration(2) }
+    private val viewModel by lazy { ViewModelProvider(this).get(WeatherViewModel::class.java) }
 
     companion object {
         val itemList = ArrayList<ShortcutItem>().apply {
@@ -54,6 +61,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel.weatherLiveData.observe(this) { result ->
+            val weather = result.getOrNull()
+            if (weather != null){
+                showWeatherInfo(weather)
+            }else {
+                "无法成功获取天气".showToast()
+                result.exceptionOrNull()?.printStackTrace()
+            }
+        }
+        viewModel.refreshWeather()
 
         Distribute.disableAutomaticCheckForUpdate()
         Distribute.setEnabledForDebuggableBuild(true)
@@ -125,5 +142,14 @@ class MainActivity : AppCompatActivity() {
     private fun setMenuIcon(){
         val iconResId = if (spanCount.value == 1) R.drawable.ic_grid_view else R.drawable.ic_list_view
         menuItem.icon = ContextCompat.getDrawable(this, iconResId)
+    }
+
+    private fun showWeatherInfo(weather: Weather){
+        val realtime = weather.realtime
+        val currentTemp = "${realtime.temperature} °C"
+        val currentSky = getString(getSky(realtime.skycon).infoStrResId)
+        val currentPM25 = getString(R.string.weather_AQI) + realtime.airQuality.aqi.chn.toInt()
+        toolbar.title = "$currentSky $currentTemp"
+        toolbar.subtitle = currentPM25
     }
 }

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- APP Name -->
     <string name="app_name">NFU Shortcuts</string>
+    <string name="app_name_release">NFU Shortcuts</string>
+    <string name="app_name_debug">NFU Shortcuts Debug</string>
+
+    <!-- item -->
+    <string name="cainiao_guoguo">Cainiao Guoguo</string>
+    <string name="call_xiaobao">Call Xiaobai Bus</string>
+    <string name="health_code">GHC Code</string>
+    <string name="kfc">KFC</string>
+    <string name="alipay_code">Alipay Code</string>
+    <string name="feedback">Feedback</string>
+    <string name="tile_captive_portal_login">NFU WiFi</string>
     <string name="feed_developer">Feed Developer</string>
     <string name="no_scan_pass">No Scan Pass</string>
     <string name="campus_bus">Campus Bus</string>
@@ -8,47 +20,20 @@
     <string name="access_code">Access Code</string>
     <string name="captive_portal_login">Login NFU WiFi</string>
 
+    <!-- Toast Message -->
+    <string name="wifi_not_enable">WiFi is OFF. Cannot login the campus network</string>
+    <string name="tooltip_configure_id">Please click the gear button to configure your student ID first</string>
+    <string name="error_create_pinned_shortcut">Your device not support create pinned shortcut</string>
+    <string name="tooltip_create_pinned_shortcut">Have tried to create shortcut on your desktop</string>
+    <string name="error_id_or_pw">ID or password is empty, please click gear icon\u2699 to configure information and then try again.</string>
+    <string name="login_unavailable">Your phone is not connected to WiFi, so cannot login.</string>
     <string name="login_successfully">Login successfully!</string>
     <string name="login_unsuccessfully">Login failed</string>
     <string name="login_timeout">ERROR: Connection timeout! Please make sure the WiFi you are currently connected is \"NFU_Student\"</string>
+    <string name="phone_num_copied">The phone number has been copied to the clipboard</string>
 
-    <string name="notification_channel_foreground_service">Foreground Service</string>
-
-    <string name="please_enter_id_pwd">Please Enter Details</string>
-    <string name="student_id">Student ID</string>
-    <string name="password">Password</string>
-    <string name="hint_password">( not WiFi password )</string>
-    <string name="cancel">Cancel</string>
-    <string name="save">Save</string>
-    <string name="save_successfully">Save successfully!</string>
-
-    <string name="error_id_or_pw">ID or password is empty, please click gear icon\u2699 to configure information and then try again.</string>
-    <string name="login_unavailable">Your phone is not connected to WiFi, so cannot login.</string>
-
-    <string name="tile_captive_portal_login">NFU WiFi</string>
-    <string name="error_create_pinned_shortcut">Your device not support create pinned shortcut</string>
-    <string name="tooltip_create_pinned_shortcut">Have tried to create shortcut on your desktop</string>
-    <string name="configure_id">Configure your student ID</string>
-    <string name="tooltip_configure_id">Please click the gear button to configure your student ID first</string>
-    <string name="feedback">Feedback</string>
-    <string name="ok">OK</string>
-    <string name="wifi_not_enable">WiFi is OFF. Cannot login the campus network</string>
-    <string name="developer">Developer</string>
-    <string name="open_source_licenses">Open Source Licenses</string>
-    <string name="developer_introduction">develop &amp; design</string>
-    <string name="about">About</string>
-    <string name="setting">setting</string>
-    <string name="thanks_for_encouragement">Thank you so much for your encouragement!</string>
-    <string name="special_thanks">Special Thanks (｡・ω・｡)</string>
-    <string name="my_girlfriend_introduction">Because of her encouragement and support, I have motivation to keep update this app</string>
-    <string name="name_of_girlfriend">Miss Lis (my girlfriend)</string>
-    <string name="create_pinned_shortcut">Create desktop shortcut</string>
-    <string name="configure_account_info">Configure account info</string>
-    <string name="kfc">KFC</string>
-    <string name="alipay_code">Alipay Code</string>
-    <string name="share">Share NFU Shortcut with friends</string>
+    <!-- Notification & Dialog -->
     <string name="share_dialog_message">The download link has been copied to the clipboard, do you want to share it with your friends by opening WeChat immediately?</string>
-    <string name="health_code">GHC Code</string>
     <string name="no">No</string>
     <string name="download_unionpay_dialog_message">Because GHC Code opened by NFU Shortcut is a mini program of UnionPay (NOT mini program of WeChat), so you must first install UnionPayt APP, jump to APP store to download it now?</string>
     <string name="not_yet_install_unionpay">You have not yet installed UnionPay</string>
@@ -56,25 +41,15 @@
     <string name="go_to_setting">Go to Settings</string>
     <string name="already_know">I already know</string>
     <string name="tips_of_grant_permission">If fail to add, please go to System Settings and grant \"Create Desktop Shortcut\" permission for NFU Shortcut.</string>
-    <string name="call_xiaobao">Call Xiaobai Bus</string>
-    <string name="allow_call_phone_in_setting">You need to allow necessary permissions of make phone calls in Settings manually</string>
-    <string name="explain_why_phone_call_permission">\"Call Xiaobai Bus\" requires you to grant us these permissions</string>
-    <string name="switch_layout">Switch layout</string>
-    <string name="uncle">Uncle</string>
-    <string name="aunt">Aunt</string>
-    <string name="brother">Brother</string>
-    <string name="phone_num_copied">The phone number has been copied to the clipboard</string>
-    <string name="please_choose_driver">Please choose a driver</string>
-    <string name="no_update_available">No update available</string>
-    <string name="download">Download</string>
-    <string name="ask_me_in_a_day">Ask me in a day</string>
-    <string name="update_available">App update available</string>
-    <string name="new_version">"New version: "</string>
-    <string name="size">"Size: "</string>
-    <string name="what_is_new">"What's new: "</string>
-    <string name="cainiao_guoguo">Cainiao Guoguo</string>
-    <string name="app_name_release">NFU Shortcuts</string>
-    <string name="app_name_debug">NFU Shortcuts Debug</string>
+    <string name="ok">OK</string>
+    <string name="notification_channel_foreground_service">Foreground Service</string>
+    <string name="please_enter_id_pwd">Please Enter Details</string>
+    <string name="student_id">Student ID</string>
+    <string name="password">Password</string>
+    <string name="hint_password">( not WiFi password )</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="save_successfully">Save successfully!</string>
     <string name="download_taobao">Download Taobao</string>
     <string name="download_cainiao">Download Cainiao</string>
     <string name="install_taobao_or_cainiao_first">Sorry, you must first install Taobao or CaiNiao APP</string>
@@ -82,4 +57,56 @@
     <string name="download_kfc">Download KFC</string>
     <string name="download_alipay">Download AliPay</string>
     <string name="temp_kfc_dialog_msg">Sorry, you must first download the APP of KFC or Alipay</string>
+    <string name="download">Download</string>
+    <string name="ask_me_in_a_day">Ask me in a day</string>
+    <string name="update_available">App update available</string>
+    <string name="new_version">"New version: "</string>
+    <string name="size">"Size: "</string>
+    <string name="what_is_new">"What's new: "</string>
+    <string name="uncle">Uncle</string>
+    <string name="aunt">Aunt</string>
+    <string name="brother">Brother</string>
+    <string name="please_choose_driver">Please choose a driver</string>
+    <string name="no_update_available">No update available</string>
+    <string name="allow_call_phone_in_setting">You need to allow necessary permissions of make phone calls in Settings manually</string>
+    <string name="explain_why_phone_call_permission">\"Call Xiaobai Bus\" requires you to grant us these permissions</string>
+
+    <!-- Menu -->
+    <string name="switch_layout">Switch layout</string>
+    <string name="share">Share NFU Shortcut with friends</string>
+    <string name="create_pinned_shortcut">Create desktop shortcut</string>
+    <string name="configure_account_info">Configure account info</string>
+    <string name="about">About</string>
+    <string name="setting">setting</string>
+    <string name="configure_id">Configure your student ID</string>
+
+    <!-- About Page -->
+    <string name="developer">Developer</string>
+    <string name="open_source_licenses">Open Source Licenses</string>
+    <string name="developer_introduction">develop &amp; design</string>
+    <string name="thanks_for_encouragement">Thank you so much for your encouragement!</string>
+    <string name="special_thanks">Special Thanks (｡・ω・｡)</string>
+    <string name="my_girlfriend_introduction">Because of her encouragement and support, I have motivation to keep update this app</string>
+    <string name="name_of_girlfriend">Miss Lis (my girlfriend)</string>
+
+    <!-- 天气用词 -->
+    <string name="weather_clear">Clear</string>
+    <string name="weather_partly_cloudy">Cloudy</string>
+    <string name="weather_cloudy">Overcast</string>
+    <string name="weather_light_haze">Mild Haze</string>
+    <string name="weather_moderate_haze">Moderate Haze</string>
+    <string name="weather_heavy_haze">Heavy Haze</string>
+    <string name="weather_light_rain">Light Rain</string>
+    <string name="weather_moderate_rain">Moderate Rain</string>
+    <string name="weather_heavy_rain">Heavy Rain</string>
+    <string name="weather_storm_rain">Storm Rain</string>
+    <string name="weather_fog">Fog</string>
+    <string name="weather_light_snow">Light Snow</string>
+    <string name="weather_moserate_snow">Moderate Snow</string>
+    <string name="weather_heavy_snow">Heavy Snow</string>
+    <string name="weather_storm_snow">Storm Snow</string>
+    <string name="weather_dust">Floating Dust</string>
+    <string name="weather_sand">Sandstorm</string>
+    <string name="weather_wind">Windy</string>
+    <string name="weather_AQI">AQI:</string>
 </resources>

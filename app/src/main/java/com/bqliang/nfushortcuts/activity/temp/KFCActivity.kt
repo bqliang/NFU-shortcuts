@@ -2,8 +2,8 @@ package com.bqliang.nfushortcuts.activity.temp
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.model.DependentApp
 import com.bqliang.nfushortcuts.tools.AppUtil
