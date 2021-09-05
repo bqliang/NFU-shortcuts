@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Solve Retrofit not working on release due to minifyEnabled = true
+-keep class com.bqliang.nfushortcuts.model.** { *; }
