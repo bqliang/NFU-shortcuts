@@ -2,7 +2,7 @@
     <!-- APP Name -->
     <string name="app_name">NFU捷径</string>
     <string name="app_name_release">NFU捷径</string>
-    <string name="app_name_debug">NFU捷径 Debug</string>
+    <string name="app_name_debug">NFU捷径 X</string>
     <string name="scheme" translatable="false">nfushortcuts</string>
 
     <!-- item -->

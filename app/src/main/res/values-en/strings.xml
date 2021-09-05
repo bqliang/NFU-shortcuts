@@ -3,7 +3,7 @@
     <!-- APP Name -->
     <string name="app_name">NFU Shortcuts</string>
     <string name="app_name_release">NFU Shortcuts</string>
-    <string name="app_name_debug">NFU Shortcuts Debug</string>
+    <string name="app_name_debug">NFU Shortcuts X</string>
 
     <!-- item -->
     <string name="cainiao_guoguo">Cainiao Guoguo</string>
