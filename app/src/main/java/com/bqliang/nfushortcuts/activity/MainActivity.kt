@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             if (weather != null){
                 showWeatherInfo(weather)
             }else {
-                "无法成功获取天气".showToast()
+                BuildConfig.CAIYUN_TOKEN.showToast()
                 result.exceptionOrNull()?.printStackTrace()
             }
         }
