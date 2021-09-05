@@ -21,7 +21,7 @@ class KFCActivity : AppCompatActivity() {
             val intent = Intent().apply {
                 action = Intent.ACTION_VIEW
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                data = Uri.parse("alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex&enbsv=0.2.2108231924.16&chInfo=ch_share__chsub_CopyLink")
+                data = Uri.parse("alipays://platformapi/startapp?appId=2018090361289233&page=preorderHome%2Fpages%2Fenter%2Fhome%2Findex")
             }
             startActivity(intent)
             finish()

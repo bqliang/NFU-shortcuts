@@ -26,7 +26,7 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:data= "alipays://platformapi/startapp?appId=20000067&amp;url=https://qr.alipay.com/s7x133604ff1cacyyk4fyd3"/>
+            android:data= "alipays://platformapi/startapp?appId=2021002142606387&amp;page=pages%2Findex%2Findex"/>
     </shortcut>
 
     <shortcut
