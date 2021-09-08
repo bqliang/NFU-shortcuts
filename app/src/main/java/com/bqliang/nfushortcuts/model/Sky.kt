@@ -22,7 +22,7 @@ private val sky = mapOf(
     "LIGHT_SNOW" to Sky(R.string.weather_light_snow),
     "MODERATE_SNOW" to Sky(R.string.weather_moserate_snow),
     "HEAVY_SNOW" to Sky(R.string.weather_heavy_snow),
-    "STORM_SNOW" to Sky(R.string.weather_storm_rain),
+    "STORM_SNOW" to Sky(R.string.weather_storm_snow),
     "DUST" to Sky(R.string.weather_dust),
     "SAND" to Sky(R.string.weather_sand)
 )

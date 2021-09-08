@@ -109,4 +109,5 @@
     <string name="weather_sand">Sandstorm</string>
     <string name="weather_wind">Windy</string>
     <string name="weather_AQI">AQI:</string>
+    <string name="weather_ultraviolet">"Ultraviolet: "</string>
 </resources>

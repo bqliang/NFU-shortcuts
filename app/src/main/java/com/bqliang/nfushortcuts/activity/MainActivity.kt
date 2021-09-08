@@ -3,16 +3,13 @@ package com.bqliang.nfushortcuts.activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bqliang.nfushortcuts.BuildConfig
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
@@ -22,6 +19,7 @@ import com.bqliang.nfushortcuts.model.Weather
 import com.bqliang.nfushortcuts.model.WeatherViewModel
 import com.bqliang.nfushortcuts.model.getSky
 import com.bqliang.nfushortcuts.tools.ClipboardUtil
+import com.bqliang.nfushortcuts.tools.MyApplication
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
 import com.bqliang.nfushortcuts.tools.showToast
 import com.bqliang.nfushortcuts.view.MyItemDecoration
@@ -149,8 +147,8 @@ class MainActivity : AppCompatActivity() {
         val realtime = weather.realtime
         val currentTemp = "${realtime.temperature} °C"
         val currentSky = getString(getSky(realtime.skycon).infoStrResId)
-        val currentPM25 = getString(R.string.weather_AQI) + realtime.airQuality.aqi.chn.toInt()
+        val ultraviolet = getString(R.string.weather_ultraviolet) + realtime.lifeIndex.ultraviolet.description
         toolbar.title = "$currentSky $currentTemp"
-        toolbar.subtitle = currentPM25
+        toolbar.subtitle = ultraviolet
     }
 }

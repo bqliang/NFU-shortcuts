@@ -1,7 +1,11 @@
 language: android                                                # 语言说明
 jdk: openjdk11
 dist: trusty                                                     # Android 项目的编译坏境
-                                             
+
+before_install:
+  - yes | sdkmanager "platforms;android-30"
+  - yes | sdkmanager "build-tools;30.0.2"
+
 android:
   components:
     # use the latest revision of Android SDK Tools
