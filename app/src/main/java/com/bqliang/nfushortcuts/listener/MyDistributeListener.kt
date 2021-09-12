@@ -25,7 +25,7 @@ class MyDistributeListener : DistributeListener {
             .setPositiveButton(R.string.download){ _, _ ->
                 Distribute.notifyUpdateAction(UpdateAction.UPDATE)
             }
-            .setNegativeButton(R.string.ask_me_in_a_day){ _, _ ->
+            .setNegativeButton(R.string.postpone){ _, _ ->
                 Distribute.notifyUpdateAction(UpdateAction.POSTPONE)
             }
             .setCancelable(true)

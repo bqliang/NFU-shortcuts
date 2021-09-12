@@ -1,7 +1,6 @@
 package com.bqliang.nfushortcuts.model
 
 import com.google.gson.annotations.SerializedName
-import retrofit2.http.Path
 
 data class RealtimeResponse(val status: String, val result: Result) {
 

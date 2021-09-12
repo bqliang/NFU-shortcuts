@@ -4,8 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
 import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
-import com.bqliang.nfushortcuts.activity.MainActivity
 import com.bqliang.nfushortcuts.tools.MyApplication
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
 import com.bqliang.nfushortcuts.tools.showToast
@@ -14,7 +14,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 private const val KEY = "if_do_not_remind"
 
-fun tipsForPinnedShortcutAlertDialog(activity: MainActivity){
+fun tipsForPinnedShortcutAlertDialog(activity: AppCompatActivity){
 
     var ifDoNotRemind = SharedPreferencesUtil.getBoolean(KEY, false)
 

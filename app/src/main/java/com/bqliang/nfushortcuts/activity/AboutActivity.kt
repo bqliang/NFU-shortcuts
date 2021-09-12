@@ -79,6 +79,9 @@ class AboutActivity : AbsAboutActivity() {
 
             add(License("PermissionX", "GuoLin",
                 License.APACHE_2,"https://github.com/guolindev/PermissionX"))
+
+            add(License("AppIntro", "Paolo Rotolo",
+                License.APACHE_2,"https://github.com/paolorotolo/AppIntro"))
         }
 
     }

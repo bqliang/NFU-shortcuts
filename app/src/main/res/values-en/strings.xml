@@ -21,6 +21,7 @@
     <string name="captive_portal_login">Login NFU WiFi</string>
 
     <!-- Toast Message -->
+    <string name="im_hungry">I am so hungry!</string>
     <string name="wifi_not_enable">WiFi is OFF. Cannot login the campus network</string>
     <string name="tooltip_configure_id">Please click the gear button to configure your student ID first</string>
     <string name="error_create_pinned_shortcut">Your device not support create pinned shortcut</string>
@@ -58,7 +59,7 @@
     <string name="download_alipay">Download AliPay</string>
     <string name="temp_kfc_dialog_msg">Sorry, you must first download the APP of KFC or Alipay</string>
     <string name="download">Download</string>
-    <string name="ask_me_in_a_day">Ask me in a day</string>
+    <string name="postpone">Postpone</string>
     <string name="update_available">App update available</string>
     <string name="new_version">"New version: "</string>
     <string name="size">"Size: "</string>
@@ -88,6 +89,15 @@
     <string name="special_thanks">Special Thanks (｡・ω・｡)</string>
     <string name="my_girlfriend_introduction">Because of her encouragement and support, I have motivation to keep update this app</string>
     <string name="name_of_girlfriend">Miss Lis (my girlfriend)</string>
+
+    <!-- Intro Page -->
+    <string name="welcome">Welcome to NFU Shortcuts!</string>
+    <string name="touch_and_go">Touch and go, no second wasted in life.</string>
+    <string name="onekey_login">Onekey login, no more jump.</string>
+    <string name="qr_codes">Health Code, Access Code and Pickup Code…</string>
+    <string name="quick_open_code">Quick show your codes.</string>
+    <string name="and_more">And more…</string>
+    <string name="one_step_ahead">Call Xiaobai, Order KFC, Buy ticket of campus bus…\nAll one step ahead.</string>
 
     <!-- 天气用词 -->
     <string name="weather_clear">Clear</string>

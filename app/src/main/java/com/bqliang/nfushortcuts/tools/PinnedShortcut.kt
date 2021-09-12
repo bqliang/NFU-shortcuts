@@ -4,12 +4,12 @@ import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.graphics.drawable.Icon
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
-import com.bqliang.nfushortcuts.activity.MainActivity
 import com.bqliang.nfushortcuts.dialog.tipsForPinnedShortcutAlertDialog
 import com.bqliang.nfushortcuts.model.Shortcut
 
-fun createPinnedShortcut(shortcut:Shortcut, activity: MainActivity){
+fun createPinnedShortcut(shortcut:Shortcut, activity: AppCompatActivity){
 
     var labelResId = -1
     var iconResourceId = -1
@@ -74,6 +74,6 @@ fun createPinnedShortcut(shortcut:Shortcut, activity: MainActivity){
         shortcutManager.requestPinShortcut(pinShortcutInfo, null)
         tipsForPinnedShortcutAlertDialog(activity)
     }else{
-        MyApplication.context.resources.getString(R.string.error_create_pinned_shortcut).showToast(Toast.LENGTH_LONG)
+        R.string.error_create_pinned_shortcut.showToast(Toast.LENGTH_LONG)
     }
 }

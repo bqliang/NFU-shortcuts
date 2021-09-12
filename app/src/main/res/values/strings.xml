@@ -20,6 +20,7 @@
     <string name="cainiao_guoguo">菜鸟裹裹</string>
 
     <!-- Toast Message -->
+    <string name="im_hungry">好饿啊呜呜呜</string>
     <string name="wifi_not_enable">WiFi未打开，无法为您登录校园网</string>
     <string name="login_successfully">登陆成功！</string>
     <string name="login_unsuccessfully">登录失败！</string>
@@ -61,7 +62,7 @@
     <string name="aunt">小白阿姨</string>
     <string name="brother">小白哥哥</string>
     <string name="download">下载</string>
-    <string name="ask_me_in_a_day">一天内询问我</string>
+    <string name="postpone">以后再说</string>
     <string name="update_available">可用的应用更新</string>
     <string name="new_version">新版本：</string>
     <string name="size">文件大小：</string>
@@ -80,6 +81,15 @@
     <string name="special_thanks">特别感谢 (｡・ω・｡)</string>
     <string name="my_girlfriend_introduction">因为她的鼓励和支持，才让我有动力不断更新打磨这个（烂）APP</string>
     <string name="name_of_girlfriend">Lis（俺对象）</string>
+
+    <!-- Intro Page -->
+    <string name="welcome">欢迎来到NFU捷径</string>
+    <string name="touch_and_go">一触即达，不浪费生命中的任何一秒</string>
+    <string name="onekey_login">一键登录，拒绝跳转</string>
+    <string name="qr_codes">健康码、门禁码、取件码…</string>
+    <string name="quick_open_code">码在弦上，张弓待发</string>
+    <string name="and_more">还有更多…</string>
+    <string name="one_step_ahead">坐小白、点KFC、校巴购票，全都快人一步</string>
 
     <!-- Menu -->
     <string name="switch_layout">切换布局</string>

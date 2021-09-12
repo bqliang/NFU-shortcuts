@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <queries>
         <package android:name="com.eg.android.AlipayGphone" />
@@ -31,6 +32,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Transparent"
         android:usesCleartextTraffic="true">
+
+        <activity android:name=".activity.MainActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"/>
+
+        <activity android:name=".activity.IntroActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"/>
+
         <activity
             android:name=".activity.temp.KFCActivity"
             android:exported="true">
@@ -57,6 +67,7 @@
                 <data android:host="cainiao" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activity.CallXiaobaiActivity"
             android:excludeFromRecents="true"
@@ -70,14 +81,17 @@
                 <data android:host="call_xiaobai" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activity.AboutActivity"
             android:exported="true"
             android:theme="@style/AppTheme.About" />
+
         <activity
             android:name=".activity.FeedbackActivity"
             android:exported="true"
             android:theme="@style/Theme.Feedback" />
+
         <activity
             android:name=".activity.LibraryCardActivity"
             android:exported="true"
@@ -91,8 +105,9 @@
                 <data android:host="library_card" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.NavigationActivity"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.Transparent">
             <intent-filter>
@@ -105,6 +120,7 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
+
         <activity
             android:name=".activity.temp.CaptivePortalLoginActivity"
             android:excludeFromRecents="true">
@@ -117,6 +133,7 @@
                 <data android:host="captive_portal_login" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activity.temp.HealthCodeActivity"
             android:excludeFromRecents="true">
@@ -134,6 +151,7 @@
             android:name=".service.MyService"
             android:enabled="true"
             android:exported="true" />
+
         <service
             android:name=".service.WifiTileService"
             android:icon="@drawable/tile_login"

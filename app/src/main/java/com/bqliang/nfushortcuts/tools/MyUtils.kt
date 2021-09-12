@@ -2,6 +2,7 @@ package com.bqliang.nfushortcuts.tools
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.widget.Toast
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.model.Shortcut
@@ -38,6 +39,7 @@ fun getIntent(shortcut: Shortcut) :Intent {
 
 fun loginWIFI(userId:String, password:String){
 
+    val TAG = "Captive Portal Login"
     var connection: HttpURLConnection? = null
     try {
         val response = StringBuffer()
@@ -69,15 +71,19 @@ fun loginWIFI(userId:String, password:String){
                 response.append(it)
             }
         }
-
-//        Log.d("loginWIFI","网页源代码：" + response.toString())
-//        Log.d("loginWIFI", "是否登录成功：" + response.toString().contains("Dr.COMWebLoginID_3.htm").toString())
-
-        if(response.toString().contains("Dr.COMWebLoginID_3.htm")) MyApplication.context.resources.getString(R.string.login_successfully).showToast()
-        else MyApplication.context.resources.getString(R.string.login_unsuccessfully).showToast()
+        val responseStr = response.toString()
+        Log.d(TAG, "login_response: $response")
+        if(responseStr.contains("WebLoginID_3")) {
+            Log.d(TAG, "login_result: Successful")
+            R.string.login_successfully.showToast()
+        }
+        else if (responseStr.contains("WebLoginID_2")) {
+            Log.d(TAG, "login_result: Unsuccessful")
+            R.string.login_unsuccessfully.showToast()
+        }
 
     }catch (e:SocketTimeoutException){
-        MyApplication.context.resources.getString(R.string.login_timeout).showToast(Toast.LENGTH_LONG)
+        R.string.login_timeout.showToast(Toast.LENGTH_LONG)
     }finally {
         connection?.disconnect()
     }

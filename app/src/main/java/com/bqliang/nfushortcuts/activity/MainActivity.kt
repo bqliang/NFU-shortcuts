@@ -13,27 +13,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.adapter.MyRecyclerViewAdapter
 import com.bqliang.nfushortcuts.dialog.CaptivePortalSettingAlertDialog
-import com.bqliang.nfushortcuts.listener.MyDistributeListener
 import com.bqliang.nfushortcuts.model.ShortcutItem
 import com.bqliang.nfushortcuts.model.Weather
 import com.bqliang.nfushortcuts.model.WeatherViewModel
 import com.bqliang.nfushortcuts.model.getSky
 import com.bqliang.nfushortcuts.tools.ClipboardUtil
-import com.bqliang.nfushortcuts.tools.MyApplication
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
-import com.bqliang.nfushortcuts.tools.showToast
 import com.bqliang.nfushortcuts.view.MyItemDecoration
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.microsoft.appcenter.AppCenter
-import com.microsoft.appcenter.analytics.Analytics
-import com.microsoft.appcenter.crashes.Crashes
 import com.microsoft.appcenter.distribute.Distribute
 
-
 class MainActivity : AppCompatActivity() {
-
     lateinit var bottomSheetDialog: BottomSheetDialog
     lateinit var toolbar: MaterialToolbar
     private lateinit var recyclerView: RecyclerView
@@ -70,14 +62,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         viewModel.refreshWeather()
-
-        Distribute.disableAutomaticCheckForUpdate()
-        Distribute.setEnabledForDebuggableBuild(true)
-        Distribute.setListener(MyDistributeListener())
-        AppCenter.start(
-            application, "f3e1fad6-dc60-4b23-8101-b7c98999bfdb",
-            Analytics::class.java, Crashes::class.java, Distribute::class.java
-        )
 
         bottomSheetDialog = BottomSheetDialog(this, R.style.Theme_MyBottomSheetDialog).apply {
             setContentView(R.layout.bottom_sheet_dialog_layout)
