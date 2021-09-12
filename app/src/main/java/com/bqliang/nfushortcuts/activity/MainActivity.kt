@@ -131,8 +131,11 @@ class MainActivity : AppCompatActivity() {
         val realtime = weather.realtime
         val currentTemp = "${realtime.temperature} °C"
         val currentSky = getString(getSky(realtime.skycon).infoStrResId)
-        val ultraviolet = getString(R.string.weather_ultraviolet) + realtime.lifeIndex.ultraviolet.description
         toolbar.title = "$currentSky $currentTemp"
-        toolbar.subtitle = ultraviolet
+        realtime.lifeIndex.ultraviolet.description.let {
+            if (it != "Null" && it !=  "无"){
+                toolbar.subtitle = getString(R.string.weather_ultraviolet) + it
+            }
+        }
     }
 }
