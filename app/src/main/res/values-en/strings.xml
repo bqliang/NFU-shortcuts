@@ -73,6 +73,7 @@
     <string name="explain_why_phone_call_permission">\"Call Xiaobai Bus\" requires you to grant us these permissions</string>
 
     <!-- Menu -->
+    <string name="check_for_updates">Check for updates</string>
     <string name="switch_layout">Switch layout</string>
     <string name="share">Share NFU Shortcut with friends</string>
     <string name="create_pinned_shortcut">Create desktop shortcut</string>
@@ -119,5 +120,5 @@
     <string name="weather_sand">Sandstorm</string>
     <string name="weather_wind">Windy</string>
     <string name="weather_AQI">AQI:</string>
-    <string name="weather_ultraviolet">"Ultraviolet: "</string>
+    <string name="weather_ultraviolet">"UV: "</string>
 </resources>

@@ -92,6 +92,7 @@
     <string name="one_step_ahead">坐小白、点KFC、校巴购票，全都快人一步</string>
 
     <!-- Menu -->
+    <string name="check_for_updates">检查更新</string>
     <string name="switch_layout">切换布局</string>
     <string name="feedback">意见反馈</string>
     <string name="about">关于</string>
