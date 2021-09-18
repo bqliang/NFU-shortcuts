@@ -22,3 +22,7 @@
 
 # Solve Retrofit not working on release due to minifyEnabled = true
 -keep class com.bqliang.nfushortcuts.model.** { *; }
+
+# UltimateBarX
+-keep class com.zackratos.ultimatebarx.ultimatebarx.** { *; }
+-keep public class * extends androidx.fragment.app.Fragment { *; }

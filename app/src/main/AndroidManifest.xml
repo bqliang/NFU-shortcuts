@@ -38,6 +38,7 @@
             android:excludeFromRecents="true"/>
 
         <activity android:name=".activity.IntroActivity"
+            android:theme="@style/Theme.NFUShortcuts"
             android:excludeFromRecents="true"
             android:exported="true"/>
 
@@ -112,7 +113,6 @@
             android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 

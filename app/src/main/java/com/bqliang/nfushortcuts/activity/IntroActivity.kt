@@ -8,14 +8,17 @@ import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
 import com.github.appintro.AppIntro2
 import com.github.appintro.AppIntroFragment
+import com.zackratos.ultimatebarx.ultimatebarx.navigationBar
+import com.zackratos.ultimatebarx.ultimatebarx.statusBar
 
 class IntroActivity : AppIntro2() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         isColorTransitionsEnabled = true
-        showStatusBar(false)
+        showStatusBar(true)
+        statusBar { transparent() }
+        navigationBar { transparent() }
 
         addSlide(
             AppIntroFragment.newInstance(

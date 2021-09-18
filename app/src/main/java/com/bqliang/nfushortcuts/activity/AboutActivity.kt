@@ -82,6 +82,9 @@ class AboutActivity : AbsAboutActivity() {
 
             add(License("AppIntro", "Paolo Rotolo",
                 License.APACHE_2,"https://github.com/paolorotolo/AppIntro"))
+
+            add(License("UltimateBarX", "Zackratos",
+                License.APACHE_2,"https://github.com/Zackratos/UltimateBarX"))
         }
 
     }
