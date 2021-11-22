@@ -63,12 +63,14 @@ android {
 }
 
 dependencies {
+    // OKHttp
+    implementation("com.squareup.okhttp3:okhttp:4.9.2")
     // UltimateBarX
     implementation 'com.gitee.zackratos:UltimateBarX:0.7.1'
     // Welcome Pages
     implementation 'com.github.AppIntro:AppIntro:6.1.0'
     // 彩云 json 解析
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
@@ -90,7 +92,6 @@ dependencies {
     // Scan code
     implementation 'com.github.jenly1314:zxing-lite:2.1.1'
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'

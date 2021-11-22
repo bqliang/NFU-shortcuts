@@ -28,7 +28,10 @@
     <string name="tooltip_create_pinned_shortcut">Have tried to create shortcut on your desktop</string>
     <string name="error_id_or_pw">ID or password is empty, please click gear icon\u2699 to configure information and then try again.</string>
     <string name="login_unavailable">Your phone is not connected to WiFi, so cannot login.</string>
-    <string name="login_successfully">Login successfully!</string>
+    <string name="unknown_error">[Unknown Error] %1$s</string>
+    <string name="incorrect_password">Incorrect Password</string>
+    <string name="account_no_exist">Account %1$s NOT EXIST</string>
+    <string name="login_successfully">Login successfully! 🏄</string>
     <string name="login_unsuccessfully">Login failed</string>
     <string name="login_timeout">ERROR: Connection timeout! Please make sure the WiFi you are currently connected is \"NFU_Student\"</string>
     <string name="phone_num_copied">The phone number has been copied to the clipboard</string>

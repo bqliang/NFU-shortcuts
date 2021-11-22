@@ -6,12 +6,12 @@ import android.util.Log
 import android.widget.Toast
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.model.Shortcut
-import java.io.BufferedReader
-import java.io.DataOutputStream
-import java.io.InputStreamReader
-import java.net.HttpURLConnection
-import java.net.SocketTimeoutException
-import java.net.URL
+import com.microsoft.appcenter.utils.HandlerUtils.runOnUiThread
+import okhttp3.*
+import okhttp3.HttpUrl.Companion.toHttpUrl
+import org.json.JSONObject
+import java.io.IOException
+import java.time.Duration
 
 
 fun getIntent(shortcut: Shortcut) :Intent {
@@ -37,54 +37,88 @@ fun getIntent(shortcut: Shortcut) :Intent {
     }
 }
 
-fun loginWIFI(userId:String, password:String){
 
-    val TAG = "Captive Portal Login"
-    var connection: HttpURLConnection? = null
-    try {
-        val response = StringBuffer()
-        val url = URL("http://172.16.30.45:80/drcom/login")
-        connection = url.openConnection() as HttpURLConnection
-        connection.requestMethod = "POST"
-        connection.connectTimeout = 3000
-        connection.apply {
-            setRequestProperty("Host","172.16.30.45")
-            setRequestProperty("Connection","keep-alive")
-            setRequestProperty("Accept","text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01")
-            setRequestProperty("DNT","1")
-            setRequestProperty("X-Requested-With","XMLHttpRequeste")
-            setRequestProperty("User-Agent","Mozilla/5.0 (Linux; Android 10; MI 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.81 Mobile Safari/537.36")
-            setRequestProperty("Referer","http://172.16.30.45/a79.htm?isReback=1")
-            setRequestProperty("Accept-Encoding","gzip, deflate")
-            setRequestProperty("Accept-Language", "zh-CN,zh;q=0.9,en-GB;q=0.8,en;q=0.7")
-        }
-        val output = DataOutputStream(connection.outputStream)
-        output.writeBytes("callback=dr${System.currentTimeMillis()}&DDDDD=${userId}" +
-                "&upass=${password}&0MKKey=123456&R1=0&R3=1&R6=1&para=00&v6ip=&_=${System.currentTimeMillis()}")
+fun loginWIFI(userId: String, password: String){
+    val TAG = "校园网登录"
+    val time = System.currentTimeMillis()
+    val client = OkHttpClient()
+        .newBuilder()
+        .connectTimeout(Duration.ofSeconds(4)) // 连接超时 4 秒
+        .build()
 
+    val httpUrl = "http://172.16.30.45/".toHttpUrl()
+        .newBuilder()
+        .addPathSegments("drcom/login")
+        .addQueryParameter("callback", "dr$time")
+        .addQueryParameter("DDDDD", userId)
+        .addQueryParameter("upass", password)
+        .addQueryParameter("0MKKey", "123456")
+        .addQueryParameter("R1", "0")
+        .addQueryParameter("R3", "1")
+        .addQueryParameter("R6", "1")
+        .addQueryParameter("para", "00")
+        .addQueryParameter("v6ip","")
+        .addQueryParameter("_", (time - 1000).toString())
+        .build()
 
-        val input = connection.inputStream
+    val request = Request.Builder()
+        .url(httpUrl)
+        .addHeader("Host", "172.16.30.45")
+        .addHeader("Connection", "keep-alive")
+        .addHeader("Accept", "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01")
+        .addHeader("DNT", "1")
+        .addHeader("X-Requested-With", "XMLHttpRequest")
+        .addHeader("User-Agent", "Mozilla/5.0 (Linux; Android 11; M2012K11AC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36")
+        .addHeader("Referer", "http://172.16.30.45/a79.htm?isReback=1")
+        .addHeader("Accept-Encoding", "gzip, deflate")
+        .addHeader("Accept-Language", "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7")
+        .build()
 
-        val reader = BufferedReader(InputStreamReader(input))
-        reader.use {
-            reader.forEachLine {
-                response.append(it)
+    client.newCall(request).enqueue(
+        object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+                Log.d(TAG, "请求发送成功")
+                response.body?.string()?.parseResponse()
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                // 连接故障（超时）
+                Log.d(TAG, "请求失败")
+                runOnUiThread { R.string.login_timeout.showToast(Toast.LENGTH_LONG) }
             }
         }
-        val responseStr = response.toString()
-        Log.d(TAG, "login_response: $response")
-        if(responseStr.contains("WebLoginID_3")) {
-            Log.d(TAG, "login_result: Successful")
-            R.string.login_successfully.showToast()
-        }
-        else if (responseStr.contains("WebLoginID_2")) {
-            Log.d(TAG, "login_result: Unsuccessful")
-            R.string.login_unsuccessfully.showToast()
-        }
-
-    }catch (e:SocketTimeoutException){
-        R.string.login_timeout.showToast(Toast.LENGTH_LONG)
-    }finally {
-        connection?.disconnect()
-    }
+    )
 }
+
+
+fun String.parseResponse() {
+    var msg = MyApplication.context.getString(R.string.unknown_error).format("")
+
+    try {
+        val jsonString = this
+            // 把前后多余信息删掉，仅保留 json 信息
+            .substring(this.indexOf('(') + 1, this.lastIndexOf(')'))
+            // 因为 json 里面有两个 olno 键，所以把第一个 olno 改为 olno0 防止异常
+            .replaceFirst("\"olno", "\"olno0")
+        Log.d("校园网登录响应信息", jsonString)
+        val json = JSONObject(jsonString)
+        val result = json.getInt("result")
+
+
+        if (result == 1){
+            val userName = json.getString("NID")
+            msg = MyApplication.context.getString(R.string.login_successfully)
+        }else if (result == 0){
+            val errorCode = json.getString("msga")
+            msg = when(errorCode){
+                "userid error1" -> MyApplication.context.getString(R.string.account_no_exist).format(json.getString("uid"))
+                "ldap auth error" -> MyApplication.context.getString(R.string.incorrect_password)
+                else -> MyApplication.context.getString(R.string.unknown_error).format(errorCode)
+            }
+        }
+    }catch (e: Exception){
+        e.printStackTrace()
+    }finally {
+            runOnUiThread { msg.showToast(Toast.LENGTH_LONG) }
+        }
+    }

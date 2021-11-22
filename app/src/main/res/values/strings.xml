@@ -22,8 +22,11 @@
     <!-- Toast Message -->
     <string name="im_hungry">好饿啊呜呜呜</string>
     <string name="wifi_not_enable">WiFi未打开，无法为您登录校园网</string>
-    <string name="login_successfully">登陆成功！</string>
+    <string name="login_successfully">登陆成功！🏄</string>
+    <string name="unknown_error">[未知错误] %1$s</string>
+    <string name="incorrect_password">信息门户账号密码不匹配</string>
     <string name="login_unsuccessfully">登录失败！</string>
+    <string name="account_no_exist">账号%1$s不存在</string>
     <string name="login_timeout">连接超时，请确保连接的WiFi为“NFU_Student”</string>
     <string name="error_id_or_pw">账号或密码为空，请点击齿轮图标\u2699配置信息后再重试</string>
     <string name="login_unavailable">您的设备似乎未成功连接到WIFI，无法登录</string>

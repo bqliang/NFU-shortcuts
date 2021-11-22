@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         val currentSky = getString(getSky(realtime.skycon).infoStrResId)
         toolbar.title = "$currentSky $currentTemp"
         realtime.lifeIndex.ultraviolet.description.let {
-            if (it != "Null" && it !=  "无"){
+            if (it != "None" && it !=  "无"){
                 toolbar.subtitle = getString(R.string.weather_ultraviolet) + it
             }
         }
