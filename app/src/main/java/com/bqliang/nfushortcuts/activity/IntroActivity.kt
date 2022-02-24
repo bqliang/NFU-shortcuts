@@ -1,20 +1,32 @@
 package com.bqliang.nfushortcuts.activity
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.bqliang.nfushortcuts.R
-import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
+import com.bqliang.nfushortcuts.tools.MyApplication
+import com.bqliang.nfushortcuts.tools.mmkv
 import com.github.appintro.AppIntro2
 import com.github.appintro.AppIntroFragment
 import com.zackratos.ultimatebarx.ultimatebarx.navigationBar
 import com.zackratos.ultimatebarx.ultimatebarx.statusBar
+import kotlin.concurrent.thread
 
 class IntroActivity : AppIntro2() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 迁移：SharedPreferences -> MMKV
+        thread {
+            val sp = MyApplication.context
+                .getSharedPreferences("app_data", Context.MODE_PRIVATE)
+            mmkv.importFromSharedPreferences(sp)
+            sp.edit().clear().commit()
+        }
+
         isColorTransitionsEnabled = true
         showStatusBar(true)
         statusBar { transparent() }
@@ -72,8 +84,9 @@ class IntroActivity : AppIntro2() {
     }
 
     private fun close(){
-        SharedPreferencesUtil.saveBoolean("isFirstStart", false)
-        startActivity(Intent(this, MainActivity::class.java))
+        mmkv.encode("isFirstStart", false)
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
         finish()
     }
 }

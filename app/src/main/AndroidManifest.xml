@@ -16,7 +16,6 @@
     <queries>
         <package android:name="com.eg.android.AlipayGphone" />
         <package android:name="com.tencent.mm" />
-        <package android:name="com.unionpay" />
         <package android:name="com.taobao.taobao" />
         <package android:name="com.cainiao.wireless" />
         <package android:name="com.yek.android.kfc.activitys"/>

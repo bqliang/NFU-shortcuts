@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.tools.MyApplication
-import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
+import com.bqliang.nfushortcuts.tools.mmkv
 import com.bqliang.nfushortcuts.tools.showToast
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -16,7 +16,7 @@ private const val KEY = "if_do_not_remind"
 
 fun tipsForPinnedShortcutAlertDialog(activity: AppCompatActivity){
 
-    var ifDoNotRemind = SharedPreferencesUtil.getBoolean(KEY, false)
+    var ifDoNotRemind = mmkv.decodeBool(KEY, false)
 
     if (!ifDoNotRemind){
         val view = LayoutInflater.from(activity).inflate(R.layout.do_not_remind_again_layout, null)
@@ -30,14 +30,14 @@ fun tipsForPinnedShortcutAlertDialog(activity: AppCompatActivity){
             .setMessage(R.string.tips_of_grant_permission)
             .setView(view)
             .setPositiveButton(R.string.go_to_setting){ _, _ ->
-                SharedPreferencesUtil.saveBoolean(KEY, ifDoNotRemind)
+                mmkv.encode(KEY, ifDoNotRemind)
                 val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
                 val uri = Uri.fromParts("package", MyApplication.context.packageName, null)
                 intent.data = uri
                 activity.startActivity(intent)
             }
             .setNegativeButton(R.string.already_know){ _, _ ->
-                SharedPreferencesUtil.saveBoolean(KEY, ifDoNotRemind)
+                mmkv.encode(KEY, ifDoNotRemind)
             }
             .show()
     }else R.string.tooltip_create_pinned_shortcut.showToast()

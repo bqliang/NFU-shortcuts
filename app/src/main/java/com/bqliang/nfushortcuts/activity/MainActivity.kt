@@ -18,7 +18,7 @@ import com.bqliang.nfushortcuts.model.Weather
 import com.bqliang.nfushortcuts.model.WeatherViewModel
 import com.bqliang.nfushortcuts.model.getSky
 import com.bqliang.nfushortcuts.tools.ClipboardUtil
-import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
+import com.bqliang.nfushortcuts.tools.mmkv
 import com.bqliang.nfushortcuts.view.MyItemDecoration
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -73,9 +73,9 @@ class MainActivity : AppCompatActivity() {
             spanCount.observe(this@MainActivity){
                 setRecyclerView()
                 setMenuIcon()
-                SharedPreferencesUtil.saveInt("span_count", it)
+                mmkv.encode("span_count", it)
             }
-            spanCount.value = SharedPreferencesUtil.getInt("span_count", 2)
+            spanCount.value = mmkv.decodeInt("span_count", 2)
 
             show()
 

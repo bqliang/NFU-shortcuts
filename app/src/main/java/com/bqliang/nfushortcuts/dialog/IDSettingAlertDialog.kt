@@ -5,7 +5,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.activity.LibraryCardActivity
-import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
+import com.bqliang.nfushortcuts.tools.mmkv
 import com.bqliang.nfushortcuts.tools.showSnackBar
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -22,14 +22,14 @@ class IDSettingAlertDialog(activity: AppCompatActivity) {
         val views = LayoutInflater.from(activity).inflate(R.layout.library_card_setting, null)
         val idInput = views.findViewById<TextView>(R.id.id_input)
 
-        idInput.text = SharedPreferencesUtil.getString("id", "")
+        idInput.text = mmkv.decodeString("id", "")
 
         MaterialAlertDialogBuilder(activity).apply {
             setTitle(R.string.configure_id)
             setView(views)
             setPositiveButton(R.string.save){ _, _ ->
                 val id = idInput.text.toString()
-                SharedPreferencesUtil.saveString("id", id)
+                mmkv.encode("id", id)
                 (activity as LibraryCardActivity).createBarCode(id)
                 activity.getString(R.string.save_successfully).showSnackBar(activity.fab)
             }

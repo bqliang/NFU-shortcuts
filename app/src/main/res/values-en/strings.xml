@@ -39,8 +39,8 @@
     <!-- Notification & Dialog -->
     <string name="share_dialog_message">The download link has been copied to the clipboard, do you want to share it with your friends by opening WeChat immediately?</string>
     <string name="no">No</string>
-    <string name="download_unionpay_dialog_message">Because GHC Code opened by NFU Shortcut is a mini program of UnionPay (NOT mini program of WeChat), so you must first install UnionPayt APP, jump to APP store to download it now?</string>
-    <string name="not_yet_install_unionpay">You have not yet installed UnionPay</string>
+    <string name="download_wechat_dialog_message">Because GHC Code opened by NFU Shortcut is a mini program of WeChat, so you must first install WeChat APP, jump to APP store to download it now?</string>
+    <string name="not_yet_install_wechat">You have not yet installed WeChat</string>
     <string name="do_not_remind_again">Don‘t remind me again</string>
     <string name="go_to_setting">Go to Settings</string>
     <string name="already_know">I already know</string>

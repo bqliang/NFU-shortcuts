@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.databinding.ActivityLibraryCardBinding
 import com.bqliang.nfushortcuts.dialog.IDSettingAlertDialog
-import com.bqliang.nfushortcuts.tools.SharedPreferencesUtil
+import com.bqliang.nfushortcuts.tools.mmkv
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -36,7 +36,7 @@ class LibraryCardActivity : AppCompatActivity() {
         fab = binding.settingFab
 
         thread {
-            id = SharedPreferencesUtil.getString("id",null)
+            id = mmkv.decodeString("id",null)
             if (id.isNullOrBlank()){
                 Snackbar.make(fab, R.string.tooltip_configure_id, Snackbar.LENGTH_SHORT)
                     .setAction(R.string.ok){ IDSettingAlertDialog(this) }

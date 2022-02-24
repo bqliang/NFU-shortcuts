@@ -7,12 +7,14 @@ import android.widget.Toast
 import com.bqliang.nfushortcuts.R
 import com.bqliang.nfushortcuts.model.Shortcut
 import com.microsoft.appcenter.utils.HandlerUtils.runOnUiThread
+import com.tencent.mmkv.MMKV
 import okhttp3.*
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import org.json.JSONObject
 import java.io.IOException
 import java.time.Duration
 
+val mmkv by lazy { MMKV.defaultMMKV() }
 
 fun getIntent(shortcut: Shortcut) :Intent {
 
@@ -38,7 +40,14 @@ fun getIntent(shortcut: Shortcut) :Intent {
 }
 
 
-fun loginWIFI(userId: String, password: String){
+fun loginWIFI(){
+    val id = mmkv.decodeString("id", null)
+    val password = mmkv.decodeString("password", null)
+    if ( id.isNullOrBlank() || password.isNullOrBlank()){
+        R.string.error_id_or_pw.showToast(Toast.LENGTH_LONG)
+        return
+    }
+
     val TAG = "校园网登录"
     val time = System.currentTimeMillis()
     val client = OkHttpClient()
@@ -50,7 +59,7 @@ fun loginWIFI(userId: String, password: String){
         .newBuilder()
         .addPathSegments("drcom/login")
         .addQueryParameter("callback", "dr$time")
-        .addQueryParameter("DDDDD", userId)
+        .addQueryParameter("DDDDD", id)
         .addQueryParameter("upass", password)
         .addQueryParameter("0MKKey", "123456")
         .addQueryParameter("R1", "0")
@@ -74,20 +83,12 @@ fun loginWIFI(userId: String, password: String){
         .addHeader("Accept-Language", "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7")
         .build()
 
-    client.newCall(request).enqueue(
-        object : Callback {
-            override fun onResponse(call: Call, response: Response) {
-                Log.d(TAG, "请求发送成功")
-                response.body?.string()?.parseResponse()
-            }
-
-            override fun onFailure(call: Call, e: IOException) {
-                // 连接故障（超时）
-                Log.d(TAG, "请求失败")
-                runOnUiThread { R.string.login_timeout.showToast(Toast.LENGTH_LONG) }
-            }
-        }
-    )
+    try {
+        val response = client.newCall(request).execute()
+        response.body?.string()?.parseResponse()
+    }catch (e: IOException){
+        R.string.login_timeout.showToast(Toast.LENGTH_LONG)
+    }
 }
 
 
@@ -107,7 +108,7 @@ fun String.parseResponse() {
 
         if (result == 1){
             val userName = json.getString("NID")
-            msg = MyApplication.context.getString(R.string.login_successfully)
+            MyApplication.context.getString(R.string.login_successfully).showToast()
         }else if (result == 0){
             val errorCode = json.getString("msga")
             msg = when(errorCode){
@@ -115,10 +116,10 @@ fun String.parseResponse() {
                 "ldap auth error" -> MyApplication.context.getString(R.string.incorrect_password)
                 else -> MyApplication.context.getString(R.string.unknown_error).format(errorCode)
             }
+            msg.showToast(Toast.LENGTH_LONG)
         }
     }catch (e: Exception){
+        runOnUiThread { msg.showToast(Toast.LENGTH_LONG) }
         e.printStackTrace()
-    }finally {
-            runOnUiThread { msg.showToast(Toast.LENGTH_LONG) }
-        }
     }
+}

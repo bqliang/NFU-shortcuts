@@ -39,8 +39,8 @@
     <!-- Notification & Dialog -->
     <string name="temp_kfc_dialog_msg">抱歉，您必须事先下载肯德基或支付宝APP</string>
     <string name="configure_id">配置您的学号信息</string>
-    <string name="download_unionpay_dialog_message">由于NFU捷径打开的粤康码为云闪付小程序（而非微信小程序），所以您必须先安装云闪付APP，是否跳转应用市场下载？</string>
-    <string name="not_yet_install_unionpay">您尚未安装云闪付</string>
+    <string name="download_wechat_dialog_message">由于NFU捷径打开的粤康码为粤省事微信小程序，所以您必须先安装微信APP，是否跳转应用市场下载？</string>
+    <string name="not_yet_install_wechat">您尚未安装微信</string>
     <string name="do_not_remind_again">不再提醒</string>
     <string name="go_to_setting">前往设置</string>
     <string name="already_know">我已知晓</string>
